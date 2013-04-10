@@ -1,0 +1,2 @@
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu TestContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu TestContent\obj\x86\Debug\ResolveAssemblyReference.cache

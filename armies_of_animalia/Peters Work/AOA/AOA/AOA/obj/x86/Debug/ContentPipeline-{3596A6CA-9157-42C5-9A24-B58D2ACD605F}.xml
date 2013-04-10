@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Objects\BuilldingBlock.FBX</Source>
+      <Name>Objects\BuilldingBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\BuilldingBlock.xnb</Output>
+      <Time>2013-04-02T23:15:25.1288867-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Key>
+        <Value>2013-04-04T13:20:42.9470139-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Textures\AllBuildingTXT.png</Source>
+      <Name>Textures\AllBuildingTXT</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\AllBuildingTXT.xnb</Output>
+      <Time>2012-12-06T14:53:49.5072398-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SpriteSheet.png</Source>
+      <Name>Textures\SpriteSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
+      <Time>2012-12-12T18:23:27.0521178-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\StarsBG.png</Source>
+      <Name>Textures\StarsBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StarsBG.xnb</Output>
+      <Time>2013-04-02T08:19:30.9660636-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\BackCity.png</Source>
+      <Name>Textures\BackCity</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\BackCity.xnb</Output>
+      <Time>2013-04-02T08:30:16.4785891-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\ForeGround.png</Source>
+      <Name>Textures\ForeGround</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\ForeGround.xnb</Output>
+      <Time>2013-04-02T08:30:16.4941891-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\MidGroundCity.png</Source>
+      <Name>Textures\MidGroundCity</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\MidGroundCity.xnb</Output>
+      <Time>2013-04-02T08:30:16.4941891-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\BuilldingBlock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Output>
+      <Time>2013-04-02T23:15:25.1288867-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{3596A6CA-9157-42C5-9A24-B58D2ACD605F}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOAContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-03-02T21:12:22.0598082-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

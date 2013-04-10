@@ -1,0 +1,8 @@
+Content\Objects\BuilldingBlock.xnb
+Content\Textures\AllBuildingTXT.xnb
+Content\Textures\SpriteSheet.xnb
+Content\Textures\StarsBG.xnb
+Content\Textures\BackCity.xnb
+Content\Textures\ForeGround.xnb
+Content\Textures\MidGroundCity.xnb
+Content\level1.txt

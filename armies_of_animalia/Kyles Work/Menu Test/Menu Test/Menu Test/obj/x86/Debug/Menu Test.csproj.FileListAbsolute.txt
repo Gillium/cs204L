@@ -1,0 +1,24 @@
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Menu Test.exe
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Menu Test.pdb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\obj\x86\Debug\Menu Test.exe
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\obj\x86\Debug\Menu Test.pdb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\QuitButton 2.xnb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\QuitButton.xnb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\StartButton 2.xnb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\StartButton.xnb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\05DeathToAllEnemies.xnb
+C:\Users\groom_kyle\Desktop\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\QuitButton 2.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\QuitButton.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\StartButton 2.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\StartButton.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\05DeathToAllEnemies.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Menu Test.exe
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Menu Test.pdb
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\obj\x86\Debug\Menu Test.exe
+C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\obj\x86\Debug\Menu Test.pdb

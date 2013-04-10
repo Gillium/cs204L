@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>QuitButton 2.bmp</Source>
+      <Name>QuitButton 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\QuitButton 2.xnb</Output>
+      <Time>2012-11-27T16:19:14-05:00</Time>
+    </Item>
+    <Item>
+      <Source>QuitButton.bmp</Source>
+      <Name>QuitButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\QuitButton.xnb</Output>
+      <Time>2012-11-27T16:30:48-05:00</Time>
+    </Item>
+    <Item>
+      <Source>StartButton 2.bmp</Source>
+      <Name>StartButton 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\StartButton 2.xnb</Output>
+      <Time>2012-11-27T16:18:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>StartButton.bmp</Source>
+      <Name>StartButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\StartButton.xnb</Output>
+      <Time>2012-11-27T16:18:26-05:00</Time>
+    </Item>
+    <Item>
+      <Source>05DeathToAllEnemies.wav</Source>
+      <Name>05DeathToAllEnemies</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\05DeathToAllEnemies.xnb</Output>
+      <Time>2012-12-13T13:57:20-05:00</Time>
+    </Item>
+    <Item>
+      <Source>b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.wav</Source>
+      <Name>b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb</Output>
+      <Time>2012-12-13T15:15:04-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{6FC858B3-7662-4826-8E33-5409D659C202}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu TestContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Gillium\Desktop\Project Data\Menu Test\Menu Test\Menu Test\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-03-02T21:12:22.0598082-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
