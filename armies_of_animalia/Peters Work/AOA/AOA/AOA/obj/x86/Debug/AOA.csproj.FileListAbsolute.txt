@@ -36,3 +36,17 @@ C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\
 C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.exe
 C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.pdb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\BuilldingBlock.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\AllBuildingTXT.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\SpriteSheet.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StarsBG.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\BackCity.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\ForeGround.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\MidGroundCity.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\level1.txt
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\AOA.exe
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\AOA.pdb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.exe
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.pdb

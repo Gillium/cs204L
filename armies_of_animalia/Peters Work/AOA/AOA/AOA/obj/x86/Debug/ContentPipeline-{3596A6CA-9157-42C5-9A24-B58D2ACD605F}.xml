@@ -7,11 +7,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\BuilldingBlock.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\BuilldingBlock.xnb</Output>
       <Time>2013-04-02T23:15:25.1288867-04:00</Time>
       <Dependency>
-        <Key>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Key>
-        <Value>2013-04-04T13:20:42.9470139-04:00</Value>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Key>
+        <Value>2013-04-11T00:41:58.6697846-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -20,7 +20,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\AllBuildingTXT.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\AllBuildingTXT.xnb</Output>
       <Time>2012-12-06T14:53:49.5072398-05:00</Time>
     </Item>
     <Item>
@@ -29,7 +29,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
       <Time>2012-12-12T18:23:27.0521178-05:00</Time>
     </Item>
     <Item>
@@ -38,7 +38,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StarsBG.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StarsBG.xnb</Output>
       <Time>2013-04-02T08:19:30.9660636-04:00</Time>
     </Item>
     <Item>
@@ -47,7 +47,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\BackCity.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\BackCity.xnb</Output>
       <Time>2013-04-02T08:30:16.4785891-04:00</Time>
     </Item>
     <Item>
@@ -56,7 +56,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\ForeGround.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\ForeGround.xnb</Output>
       <Time>2013-04-02T08:30:16.4941891-04:00</Time>
     </Item>
     <Item>
@@ -65,14 +65,14 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\MidGroundCity.xnb</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\MidGroundCity.xnb</Output>
       <Time>2013-04-02T08:30:16.4941891-04:00</Time>
     </Item>
     <Item>
       <Source>Objects\BuilldingBlock.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Output>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Output>
       <Time>2013-04-02T23:15:25.1288867-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -82,10 +82,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOAContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOAContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

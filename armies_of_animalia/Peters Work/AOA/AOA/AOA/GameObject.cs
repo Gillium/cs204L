@@ -27,7 +27,7 @@ namespace AOA
         Model theShape;
 
         // Overall scale factor to fit our object into our world
-        float objectScale = 0.05f;
+        float objectScale = 0.34f;
 
         // location and velocity of our object
         Vector3 position;
@@ -69,7 +69,7 @@ namespace AOA
         }
 
         /// <summary>
-        /// Gets or sets the velocity
+        /// Gets or sets the filename
         /// </summary>
         public String Filename
         {
@@ -158,14 +158,14 @@ namespace AOA
             float headingAngle = (float)Math.Atan2(velocity.Y, velocity.X);
             Matrix pitchRotation = Matrix.CreateRotationX(0);
             Matrix yawRotation = Matrix.CreateRotationZ((float)(headingAngle + Math.PI / 2.0));
-            Matrix rollRotation = Matrix.CreateRotationY(0);
+            Matrix rollRotation = Matrix.CreateRotationY((float)(headingAngle + Math.PI / 2.0));//
             Matrix translation = Matrix.CreateTranslation(position + 1.5f * Vector3.UnitZ);
 
-            RootTransform = scale *
-                            rollRotation *
-                            yawRotation *
-                            pitchRotation *
-                            translation;
+            RootTransform = scale *             //1
+                            rollRotation *      //2
+                            //yawRotation *       //3
+                            //pitchRotation *     //4
+                            translation;        //5
 
             // Look up combined bone matrices for the entire model.
             theShape.CopyAbsoluteBoneTransformsTo(boneTransforms);

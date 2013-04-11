@@ -43,10 +43,10 @@ namespace AOA
             Player.Draw(spriteBatch);
         }
 
-        public void DrawBackgound(GameTime gameTime, SpriteBatch spriteBatch)
+        public void DrawBackgound(GameTime gameTime, SpriteBatch spriteBatch, Camera camera)
         {
             if (activateMap != null)
-                activateMap.Draw(spriteBatch);
+                activateMap.Draw(spriteBatch, camera);
         }
     }
 }

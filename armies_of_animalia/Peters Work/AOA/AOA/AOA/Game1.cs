@@ -55,18 +55,33 @@ namespace AOA {
             camera = new Camera(GraphicsDevice.Viewport);
 
             buildingBlock = new GameObject();
+            buildingBlock.initializeMovement(new Vector3(0,0,0),
+                                      new Vector3(0, 0, 0));
+
+            //map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
+            //    "Textures/AllBuildingTXT", new Point(50, 50), '*', 'P');
+            //map1.AddRegion('X', new Rectangle(0, 0, 50, 50));
+            //map1.AddRegion('T', new Rectangle(222, 0, 50, 50));
+            //map1.AddRegion('>', new Rectangle(165, 0, 50, 50));
+            //map1.AddRegion('<', new Rectangle(110, 0, 50, 50));
+            //map1.AddRegion('E', new Rectangle(280, 0, 50, 50));
+            //map1.AddRegion('B', new Rectangle(280, 0, 50, 50));
+            //map1.AddRegion('R', new Rectangle(55, 0, 50, 50));
+            //map1.AddRegion('A', new Rectangle(390, 0, 50, 50));
+            //map1.AddRegion('C', new Rectangle(335, 0, 50, 50));
 
             map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
-                "Textures/AllBuildingTXT", new Point(50, 50), '*', 'P');
-            map1.AddRegion('X', new Rectangle(0, 0, 50, 50));
-            map1.AddRegion('T', new Rectangle(222, 0, 50, 50));
-            map1.AddRegion('>', new Rectangle(165, 0, 50, 50));
-            map1.AddRegion('<', new Rectangle(110, 0, 50, 50));
-            map1.AddRegion('E', new Rectangle(280, 0, 50, 50));
-            map1.AddRegion('B', new Rectangle(280, 0, 50, 50));
-            map1.AddRegion('R', new Rectangle(55, 0, 50, 50));
-            map1.AddRegion('A', new Rectangle(390, 0, 50, 50));
-            map1.AddRegion('C', new Rectangle(335, 0, 50, 50));
+                buildingBlock, new Point(50, 50), '*', 'P');
+            map1.AddRegion('X', buildingBlock);
+            map1.AddRegion('T', buildingBlock);
+            map1.AddRegion('>', buildingBlock);
+            map1.AddRegion('<', buildingBlock);
+            map1.AddRegion('E', buildingBlock); // enemy
+            map1.AddRegion('B', buildingBlock); // boss
+            map1.AddRegion('R', buildingBlock);
+            map1.AddRegion('A', buildingBlock);
+            map1.AddRegion('C', buildingBlock);
+
             map1.AddBackground("Textures/StarsBG");
             level1 = new Level(map1);
 
@@ -98,6 +113,10 @@ namespace AOA {
             scrolling5 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(0, height, 2048, 500));
             scrolling6 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(2048, height, 2048, 500));
             scrolling9 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(4096, height, 2048, 500));
+
+            // load the hunter's model
+            buildingBlock.Filename = "Objects\\BuilldingBlock";
+            buildingBlock.Load(Content);
         }
 
         /// <summary>
@@ -170,23 +189,23 @@ namespace AOA {
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform); //
 
-            map1.DrawBackground(spriteBatch);
+            //map1.DrawBackground(spriteBatch);
 
             //draw paralaxingBackGround here
-            scrolling5.Draw(spriteBatch);
-            scrolling6.Draw(spriteBatch);
-            scrolling9.Draw(spriteBatch);
+            //scrolling5.Draw(spriteBatch);
+            //scrolling6.Draw(spriteBatch);
+            //scrolling9.Draw(spriteBatch);
 
-            scrolling3.Draw(spriteBatch);
-            scrolling4.Draw(spriteBatch);
-            scrolling8.Draw(spriteBatch);
+            //scrolling3.Draw(spriteBatch);
+            //scrolling4.Draw(spriteBatch);
+            //scrolling8.Draw(spriteBatch);
 
-            scrolling1.Draw(spriteBatch);
-            scrolling2.Draw(spriteBatch);
-            scrolling7.Draw(spriteBatch);
+            //scrolling1.Draw(spriteBatch);
+            //scrolling2.Draw(spriteBatch);
+            //scrolling7.Draw(spriteBatch);
 
             //draw background here
-            level1.DrawBackgound(gameTime, spriteBatch);
+            level1.DrawBackgound(gameTime, spriteBatch, camera);
 
             // draw player here
             level1.Draw(gameTime, spriteBatch);

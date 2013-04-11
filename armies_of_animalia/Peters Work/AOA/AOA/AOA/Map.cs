@@ -12,7 +12,7 @@ namespace AOA
 {
     public class Map
     {
-        Dictionary<char, Rectangle> tileRegions;
+        Dictionary<char, GameObject> tileRegions;
 
         public Texture2D background;
         ContentManager content;
@@ -34,7 +34,7 @@ namespace AOA
 
         //char emptyTile;
 
-        public Texture2D TileSheet {
+        public GameObject TileSheet {
             get;
             protected set;
         }
@@ -44,23 +44,24 @@ namespace AOA
             private set;
         }
 
-        public Map(ContentManager content, string file, string tileSheetAsset,
-            Point dimensions, char emptyTile, char spawnTile) {
+        public Map(ContentManager content, string file,  
+            GameObject go, Point dimensions, char emptyTile, char spawnTile) {
             this.content = content;
             this.emptyTile = emptyTile;
             this.SpawnTile = spawnTile;
 
             filename = file;
-            tileRegions = new Dictionary<char, Rectangle>();
+            tileRegions = new Dictionary<char, GameObject>();
             TileDimensions = dimensions;
 
-            LoadTileSheet(tileSheetAsset);
+            LoadGameObject(go);
 
             ReadFile();
         }
 
-        private void LoadTileSheet(string tileSheetAsset) {
-            TileSheet = content.Load<Texture2D>(tileSheetAsset);
+        private void LoadGameObject(GameObject go) {
+            //go.Load(content);
+            TileSheet = go;
         }
 
         private void ReadFile() {
@@ -94,7 +95,7 @@ namespace AOA
             mapDimensions = new Vector2(width, height);
         }
 
-        public void AddRegion(char tileKey, Rectangle region) {
+        public void AddRegion(char tileKey, GameObject region) {
             //can only have one region per key
             if (!tileRegions.ContainsKey(tileKey))
                 tileRegions.Add(tileKey, region);
@@ -117,7 +118,7 @@ namespace AOA
             return false;
         }
 
-        public void Draw(SpriteBatch spritebatch) {
+        public void Draw(SpriteBatch spritebatch, Camera camera) {
             if (TileSheet == null)
                 throw new Exception("Tile sheet cannot be null");
             else if (tileRegions.Count == 0)
@@ -129,7 +130,7 @@ namespace AOA
                 //if (background != null)
                   //  spritebatch.Draw(background, bgRect, Color.White);
 
-                DrawTiles(spritebatch);
+                DrawTiles(spritebatch, camera);
             }
         }
 
@@ -138,16 +139,21 @@ namespace AOA
                      (int)(mapDimensions.Y * TileDimensions.Y)), Color.White);
         }
 
-        private void DrawTiles(SpriteBatch spritebatch) {
+        private void DrawTiles(SpriteBatch spritebatch, Camera camera)
+        {
             Rectangle bgRect = new Rectangle(0, 0, (int)(mapDimensions.X * TileDimensions.X),
                 (int)(mapDimensions.Y * TileDimensions.Y));
 
             for (int j = 0; j < mapDimensions.Y; j++) {
                 for (int i = 0; i < mapDimensions.X; i++) {
                     if (tiles[i, j] != emptyTile) {
-                        spritebatch.Draw(TileSheet, new Vector2(TileDimensions.X * i,
-                            bgRect.Height - TileDimensions.Y * (j + 1)), tileRegions[tiles[i, j]],
-                            Color.White);
+                        //spritebatch.Draw(TileSheet, new Vector2(TileDimensions.X * i,
+                        //    bgRect.Height - TileDimensions.Y * (j + 1)), tileRegions[tiles[i, j]],
+                        //    Color.White);
+                        TileSheet.Position = new Vector3(TileDimensions.X * i,
+                                                         TileDimensions.Y * j, 0);
+//                            bgRect.Height - TileDimensions.Y * (j + 1), 10.0f);
+                        TileSheet.Draw(camera.ViewMatrix, camera.ProjectionMatrix);
                     }
                 }
             }

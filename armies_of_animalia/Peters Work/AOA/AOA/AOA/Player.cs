@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AOA
 {
-    class Player
+    public class Player
     {
         Texture2D texture;
         Vector2 position, previousPosition;
