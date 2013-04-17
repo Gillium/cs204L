@@ -11,17 +11,8 @@
       <Time>2013-04-02T23:15:25.1288867-04:00</Time>
       <Dependency>
         <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Key>
-        <Value>2013-04-11T00:41:58.6697846-04:00</Value>
+        <Value>2013-04-16T13:10:46.7419416-04:00</Value>
       </Dependency>
-    </Item>
-    <Item>
-      <Source>Textures\AllBuildingTXT.png</Source>
-      <Name>Textures\AllBuildingTXT</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\AllBuildingTXT.xnb</Output>
-      <Time>2012-12-06T14:53:49.5072398-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\SpriteSheet.png</Source>
@@ -74,6 +65,61 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\BuilldingBlock_0.xml</Output>
       <Time>2013-04-02T23:15:25.1288867-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\QuitButton 2.bmp</Source>
+      <Name>Textures\QuitButton 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\QuitButton 2.xnb</Output>
+      <Time>2013-04-16T18:58:57.6566414-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\QuitButton.bmp</Source>
+      <Name>Textures\QuitButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\QuitButton.xnb</Output>
+      <Time>2013-04-16T18:58:57.6596415-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\StartButton 2.bmp</Source>
+      <Name>Textures\StartButton 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StartButton 2.xnb</Output>
+      <Time>2013-04-16T18:58:57.6616416-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\StartButton.bmp</Source>
+      <Name>Textures\StartButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StartButton.xnb</Output>
+      <Time>2013-04-16T18:58:57.6636418-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.wav</Source>
+      <Name>Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb</Output>
+      <Time>2013-04-16T19:20:47.1741047-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\05DeathToAllEnemies.wav</Source>
+      <Name>Sounds\05DeathToAllEnemies</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\05DeathToAllEnemies.xnb</Output>
+      <Extra>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\05DeathToAllEnemies.wma</Extra>
+      <Time>2013-04-16T19:21:02.6181318-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

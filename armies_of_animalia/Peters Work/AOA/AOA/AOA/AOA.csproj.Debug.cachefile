@@ -1,8 +1,14 @@
 Content\Objects\BuilldingBlock.xnb
-Content\Textures\AllBuildingTXT.xnb
 Content\Textures\SpriteSheet.xnb
 Content\Textures\StarsBG.xnb
 Content\Textures\BackCity.xnb
 Content\Textures\ForeGround.xnb
 Content\Textures\MidGroundCity.xnb
+Content\Textures\QuitButton 2.xnb
+Content\Textures\QuitButton.xnb
+Content\Textures\StartButton 2.xnb
+Content\Textures\StartButton.xnb
+Content\Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
+Content\Sounds\05DeathToAllEnemies.xnb
+Content\Sounds\05DeathToAllEnemies.wma
 Content\level1.txt

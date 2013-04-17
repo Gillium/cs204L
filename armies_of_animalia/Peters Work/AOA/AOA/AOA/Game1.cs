@@ -12,17 +12,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AOA {
     /// <summary>
-    /// This is the main type for your game
+    /// Armies of Animalia Game final submission
+    /// Team Members: Joe G, Kyle G, Peter P
+    /// 04/16/2013
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game {
-        public static bool collision = false;
+ 
+    public class Game1 : Microsoft.Xna.Framework.Game {        
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Level level1;
-        Map map1;
 
         //Player player;
         Camera camera;
+        public static bool collision = false;
+
+        //Backgrounds
+        Level level1;
+        Map map1;
 
         //Scrolling background;
         Scrolling scrolling1;
@@ -35,40 +40,39 @@ namespace AOA {
         Scrolling scrolling8;//extended level
         Scrolling scrolling9;//extended level
 
+        //Building blocks
         GameObject buildingBlock;
+
+        //Gamestate commands
+        enum GameState { TitleScreen = 0, GameStarted, GameEnded };
+        GameState currentGameState;
+        KeyboardState currentInput;
+
+        //Titlescreen
+        Texture2D StartButton, QuitButton;
+        double Center_of_screen_Width;
+        Song MenuMusic;
+        SoundEffect ButtonHover;
+        Vector2 StartGameButtonPosition;
+        Vector2 QuitButtonPosition;
+        bool OnButton1;
+        bool OnButton2;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 1280;//800 default size
-            graphics.PreferredBackBufferHeight = 720;//500 default size
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize() {
-            // TODO: Add your initialization logic here
+            this.IsMouseVisible = true;
+            Window.AllowUserResizing = true;
             camera = new Camera(GraphicsDevice.Viewport);
 
             buildingBlock = new GameObject();
             buildingBlock.initializeMovement(new Vector3(0,0,0),
                                       new Vector3(0, 0, 0));
-
-            //map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
-            //    "Textures/AllBuildingTXT", new Point(50, 50), '*', 'P');
-            //map1.AddRegion('X', new Rectangle(0, 0, 50, 50));
-            //map1.AddRegion('T', new Rectangle(222, 0, 50, 50));
-            //map1.AddRegion('>', new Rectangle(165, 0, 50, 50));
-            //map1.AddRegion('<', new Rectangle(110, 0, 50, 50));
-            //map1.AddRegion('E', new Rectangle(280, 0, 50, 50));
-            //map1.AddRegion('B', new Rectangle(280, 0, 50, 50));
-            //map1.AddRegion('R', new Rectangle(55, 0, 50, 50));
-            //map1.AddRegion('A', new Rectangle(390, 0, 50, 50));
-            //map1.AddRegion('C', new Rectangle(335, 0, 50, 50));
 
             map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
                 buildingBlock, new Point(50, 50), '*', 'P');
@@ -81,9 +85,9 @@ namespace AOA {
             map1.AddRegion('R', buildingBlock);
             map1.AddRegion('A', buildingBlock);
             map1.AddRegion('C', buildingBlock);
-
             map1.AddBackground("Textures/StarsBG");
             level1 = new Level(map1);
+            currentGameState = GameState.TitleScreen;
 
             base.Initialize();
         }
@@ -117,64 +121,128 @@ namespace AOA {
             // load the hunter's model
             buildingBlock.Filename = "Objects\\BuilldingBlock";
             buildingBlock.Load(Content);
+
+            // Titlescreen loads
+            StartButton = Content.Load<Texture2D>(@"Textures\StartButton");
+            QuitButton = Content.Load<Texture2D>(@"Textures\QuitButton");
+            Center_of_screen_Width = (graphics.PreferredBackBufferWidth - StartButton.Width) / 2;
+            StartGameButtonPosition = new Vector2((float)Center_of_screen_Width,
+                (float)((graphics.PreferredBackBufferHeight - (2 * StartButton.Height) - 40) / 2.0));
+            QuitButtonPosition = new Vector2((float)Center_of_screen_Width,
+                (float)(((graphics.PreferredBackBufferHeight - (2 * StartButton.Height) + 120) / 2.0) + 20));
+            OnButton1 = false;
+            OnButton2 = false;
+            MenuMusic = Content.Load<Song>(@"Sounds\05DeathToAllEnemies");
+            MediaPlayer.IsRepeating = true;
+            ButtonHover = Content.Load<SoundEffect>(@"Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX");
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
-        protected override void UnloadContent() {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+            currentInput = Keyboard.GetState();
 
             // TODO: Add your update logic here
-            level1.Update(gameTime);
-            camera.Update(gameTime, level1.Player);
+            if (currentGameState == GameState.TitleScreen) {
+                if ((gameTime.ElapsedGameTime.Duration().TotalMinutes + gameTime.ElapsedGameTime.Duration().TotalSeconds) % 
+                    97 == 0)
+                MediaPlayer.Play(MenuMusic);
 
-            //scrolling background
-            if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
-                scrolling1.rectangle.X = scrolling2.rectangle.X + scrolling2.texture.Width;
-            if (scrolling2.rectangle.X + scrolling2.texture.Width <= 0)
-                scrolling2.rectangle.X = scrolling7.rectangle.X + scrolling7.texture.Width;
-            if (scrolling7.rectangle.X + scrolling7.texture.Width <= 0)
-                scrolling7.rectangle.X = scrolling1.rectangle.X + scrolling1.texture.Width;
+                float StartButtonLeft = StartGameButtonPosition.X;
+                float StartButtonRight = StartButtonLeft + StartButton.Bounds.Width;
+                float StartButtonTop = StartGameButtonPosition.Y;
+                float StartButtonBottom = StartButtonTop + StartButton.Bounds.Height;
 
-            if (scrolling3.rectangle.X + scrolling3.texture.Width <= 0)
-                scrolling3.rectangle.X = scrolling4.rectangle.X + scrolling4.texture.Width;
-            if (scrolling4.rectangle.X + scrolling4.texture.Width <= 0)
-                scrolling4.rectangle.X = scrolling8.rectangle.X + scrolling8.texture.Width;
-            if (scrolling8.rectangle.X + scrolling8.texture.Width <= 0)
-                scrolling8.rectangle.X = scrolling3.rectangle.X + scrolling3.texture.Width;
+                float QuitButtonLeft = QuitButtonPosition.X;
+                float QuitButtonRight = QuitButtonPosition.X + QuitButton.Bounds.Width;
+                float QuitButtonTop = QuitButtonPosition.Y;
+                float QuitButtonBottom = QuitButtonTop + QuitButton.Bounds.Height;
 
-            if (scrolling5.rectangle.X + scrolling5.texture.Width <= 0)
-                scrolling5.rectangle.X = scrolling6.rectangle.X + scrolling6.texture.Width;
-            if (scrolling6.rectangle.X + scrolling6.texture.Width <= 0)
-                scrolling6.rectangle.X = scrolling9.rectangle.X + scrolling9.texture.Width;
-            if (scrolling9.rectangle.X + scrolling9.texture.Width <= 0)
-                scrolling9.rectangle.X = scrolling5.rectangle.X + scrolling5.texture.Width;
+                //Logic for testing if the Mouse is within range of the Width of the buttons
+                if (Mouse.GetState().X > StartButtonLeft && Mouse.GetState().X < StartButtonRight) {
+                    //Tests to see if the mouse cursor is within the bound of the Start Buttons y coordinates
+                    if (Mouse.GetState().Y < StartButtonBottom && Mouse.GetState().Y > StartButtonTop) {
+                        if (!OnButton1) {
+                            StartButton = Content.Load<Texture2D>(@"Textures\StartButton 2");
+                            ButtonHover.Play();
+                            OnButton1 = true;
+                        }
 
-            scrolling1.Update();
-            scrolling2.Update();
-            scrolling7.Update();
+                        if (Mouse.GetState().LeftButton == ButtonState.Pressed) {
+                            currentGameState = GameState.GameStarted;
+                            MediaPlayer.Stop();
+                        }
+                    } else {
+                        StartButton = Content.Load<Texture2D>(@"Textures\StartButton");
+                        OnButton1 = false;
+                    }
+                } else {
+                    StartButton = Content.Load<Texture2D>(@"Textures\StartButton");
+                    OnButton1 = false;
+                }
 
-            scrolling3.Update2();
-            scrolling4.Update2();
-            scrolling8.Update2();
+                if (Mouse.GetState().X > QuitButtonLeft && Mouse.GetState().X < QuitButtonRight) {
+                    //Tests to see if the mouse cursor is within the bound of the Start Buttons y coordinates
+                    if (Mouse.GetState().Y < QuitButtonBottom && Mouse.GetState().Y > QuitButtonTop) {
+                        if (!OnButton2) {
+                            QuitButton = Content.Load<Texture2D>(@"Textures\QuitButton 2");
+                            OnButton2 = true;
+                            ButtonHover.Play();
+                        }
 
-            scrolling5.Update3();
-            scrolling6.Update3();
-            scrolling9.Update3();
+                        if (Mouse.GetState().LeftButton == ButtonState.Pressed) {
+                            this.Exit();
+                        }
+                    } else {
+                        QuitButton = Content.Load<Texture2D>(@"Textures\QuitButton");
+                        OnButton2 = false;
+                    }
+                } else {
+                    QuitButton = Content.Load<Texture2D>(@"Textures\QuitButton");
+                    OnButton2 = false;
+                }
+            } else if (currentGameState == GameState.GameStarted) {
+                level1.Update(gameTime);
+                camera.Update(gameTime, level1.Player);
 
+                //scrolling background
+                if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
+                    scrolling1.rectangle.X = scrolling2.rectangle.X + scrolling2.texture.Width;
+                if (scrolling2.rectangle.X + scrolling2.texture.Width <= 0)
+                    scrolling2.rectangle.X = scrolling7.rectangle.X + scrolling7.texture.Width;
+                if (scrolling7.rectangle.X + scrolling7.texture.Width <= 0)
+                    scrolling7.rectangle.X = scrolling1.rectangle.X + scrolling1.texture.Width;
+
+                if (scrolling3.rectangle.X + scrolling3.texture.Width <= 0)
+                    scrolling3.rectangle.X = scrolling4.rectangle.X + scrolling4.texture.Width;
+                if (scrolling4.rectangle.X + scrolling4.texture.Width <= 0)
+                    scrolling4.rectangle.X = scrolling8.rectangle.X + scrolling8.texture.Width;
+                if (scrolling8.rectangle.X + scrolling8.texture.Width <= 0)
+                    scrolling8.rectangle.X = scrolling3.rectangle.X + scrolling3.texture.Width;
+
+                if (scrolling5.rectangle.X + scrolling5.texture.Width <= 0)
+                    scrolling5.rectangle.X = scrolling6.rectangle.X + scrolling6.texture.Width;
+                if (scrolling6.rectangle.X + scrolling6.texture.Width <= 0)
+                    scrolling6.rectangle.X = scrolling9.rectangle.X + scrolling9.texture.Width;
+                if (scrolling9.rectangle.X + scrolling9.texture.Width <= 0)
+                    scrolling9.rectangle.X = scrolling5.rectangle.X + scrolling5.texture.Width;
+
+                scrolling1.Update();
+                scrolling2.Update();
+                scrolling7.Update();
+
+                scrolling3.Update2();
+                scrolling4.Update2();
+                scrolling8.Update2();
+
+                scrolling5.Update3();
+                scrolling6.Update3();
+                scrolling9.Update3();
+            } else if (currentGameState == GameState.GameEnded) {
+                // end commands eg Credits, gameover screen
+            }
+            
             base.Update(gameTime);
         }
 
@@ -185,32 +253,40 @@ namespace AOA {
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
+            if (currentGameState == GameState.TitleScreen) {
+                spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+                spriteBatch.Draw(StartButton, StartGameButtonPosition, Color.White);
+                spriteBatch.Draw(QuitButton, QuitButtonPosition, Color.White);
+                spriteBatch.End();
+            }
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform); //
+            if (currentGameState == GameState.GameStarted) {
+                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform); //
+                
+                //map1.DrawBackground(spriteBatch);
 
-            //map1.DrawBackground(spriteBatch);
+                //draw paralaxingBackGround here
+                //scrolling5.Draw(spriteBatch);
+                //scrolling6.Draw(spriteBatch);
+                //scrolling9.Draw(spriteBatch);
 
-            //draw paralaxingBackGround here
-            //scrolling5.Draw(spriteBatch);
-            //scrolling6.Draw(spriteBatch);
-            //scrolling9.Draw(spriteBatch);
+                //scrolling3.Draw(spriteBatch);
+                //scrolling4.Draw(spriteBatch);
+                //scrolling8.Draw(spriteBatch);
 
-            //scrolling3.Draw(spriteBatch);
-            //scrolling4.Draw(spriteBatch);
-            //scrolling8.Draw(spriteBatch);
+                //scrolling1.Draw(spriteBatch);
+                //scrolling2.Draw(spriteBatch);
+                //scrolling7.Draw(spriteBatch);
 
-            //scrolling1.Draw(spriteBatch);
-            //scrolling2.Draw(spriteBatch);
-            //scrolling7.Draw(spriteBatch);
+                //draw background here
+                level1.DrawBackgound(gameTime, spriteBatch, camera);
 
-            //draw background here
-            level1.DrawBackgound(gameTime, spriteBatch, camera);
+                // draw player here
+                level1.Draw(gameTime, spriteBatch);
 
-            // draw player here
-            level1.Draw(gameTime, spriteBatch);
-
-            spriteBatch.End();
+                spriteBatch.End();
+            }
+            
             base.Draw(gameTime);
         }
     }
