@@ -38,9 +38,9 @@ namespace AOA
             Game1.collision = collision;
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Camera camera)
         {
-            Player.Draw(spriteBatch);
+            Player.Draw(spriteBatch, camera);
         }
 
         public void DrawBackgound(GameTime gameTime, SpriteBatch spriteBatch, Camera camera)

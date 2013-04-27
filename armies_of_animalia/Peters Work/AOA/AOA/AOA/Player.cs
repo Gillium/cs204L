@@ -72,10 +72,10 @@ namespace AOA
             texture = content.Load<Texture2D>(assetname);
         }
 
-        //public void LoadObj(ContentManager content, string assetname)
-        //{
-        //    obj = content.Load<GameObject>(assetname);
-        //}
+        public void LoadObj(GameObject go)
+        {
+            obj = go;
+        }
 
         public Point GetTileLocation()
         {
@@ -186,7 +186,7 @@ namespace AOA
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Camera camera)
         {
             spriteBatch.Draw(texture, position,
                 new Rectangle(currentFrame.X * frameSize.X, //first point starts at 0, 0
@@ -194,6 +194,8 @@ namespace AOA
                 frameSize.X, //third, 128, 0
                 frameSize.Y), // fourth, 0,128
                 Color.White);
+            obj.Position = new Vector3(position.X,position.Y, 0);
+            obj.Draw(camera.ViewMatrix, camera.ProjectionMatrix);
         }
     }
 }

@@ -179,6 +179,8 @@ namespace AOA {
             player.Filename = "Objects\\foxPlayer";
             player.Load(Content);
 
+            level1.Player.LoadObj(player);
+
             // Titlescreen loads
             StartButton = Content.Load<Texture2D>(@"Textures\StartButton");
             QuitButton = Content.Load<Texture2D>(@"Textures\QuitButton");
@@ -345,7 +347,7 @@ namespace AOA {
                 level1.DrawBackgound(gameTime, spriteBatch, camera);
 
                 // draw player here
-                level1.Draw(gameTime, spriteBatch);
+                level1.Draw(gameTime, spriteBatch, camera);
 
                 spriteBatch.End();
             }
