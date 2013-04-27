@@ -24,7 +24,7 @@ namespace AOA {
         //Player player;
         Camera camera;
         public static bool collision = false;
-        //GameObject player;
+        GameObject player;
 
         //Backgrounds
         Level level1;
@@ -108,13 +108,13 @@ namespace AOA {
             belconyBlock.initializeMovement(new Vector3(0, 0, 0),
                 new Vector3(0, 0, 0));
 
-            //player = new GameObject();
-            //player.initializeMovement(new Vector3(0, 0, 0),
-            //    new Vector3(0, 0, 0));
+            player = new GameObject();
+            player.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
 
             map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
-                topBlock, new Point(50, 50), '*', 'P');
-                //tileSheet, new Point(50, 50), '*', 'P');
+               new Point(100, 100), '*');
+            map1.AddRegion('P', player);
             map1.AddRegion('X', windowBlock);
             map1.AddRegion('T', topBlock);
             map1.AddRegion('>', rightBlock);
@@ -175,9 +175,9 @@ namespace AOA {
             //belconyBlock.Filename = "Objects\\belconyBlock";
             //belconyBlock.Load(Content);
 
-            // Load player model
-            // player.Filename = "Objects\\FoxPlayer";
-            // player.Load(Content);
+            //Load player model
+            player.Filename = "Objects\\foxPlayer";
+            player.Load(Content);
 
             // Titlescreen loads
             StartButton = Content.Load<Texture2D>(@"Textures\StartButton");

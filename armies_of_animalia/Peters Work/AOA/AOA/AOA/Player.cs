@@ -123,6 +123,7 @@ namespace AOA
                 position.X = 0;
             if (position.Y <= 0)
                 position.Y = 0;
+            
             PopulateBoundPoints();
 
             Point loc = GetTileLocation(BoundPoints[0]);

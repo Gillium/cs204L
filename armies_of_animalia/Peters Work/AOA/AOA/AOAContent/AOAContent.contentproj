@@ -39,11 +39,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Objects\FoxPlayer.FBX">
-      <Name>FoxPlayer</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Objects\basicBlock.FBX">
       <Name>basicBlock</Name>
       <Importer>FbxImporter</Importer>
@@ -71,6 +66,11 @@
     </Compile>
     <Compile Include="Objects\topBlock.FBX">
       <Name>topBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Objects\foxPlayer.FBX">
+      <Name>foxPlayer</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

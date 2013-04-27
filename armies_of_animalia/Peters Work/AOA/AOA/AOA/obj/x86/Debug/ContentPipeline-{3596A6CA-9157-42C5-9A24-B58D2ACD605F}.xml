@@ -108,10 +108,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\FoxPlayer.xnb</Output>
-      <Time>2013-04-16T23:05:54.5365391-04:00</Time>
+      <Time>2013-04-26T23:46:53.2944102-04:00</Time>
       <Dependency>
         <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\FoxPlayer_0.xml</Key>
-        <Value>2013-04-16T23:12:10.8190612-04:00</Value>
+        <Value>2013-04-26T23:46:56.8676146-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -119,7 +119,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\FoxPlayer_0.xml</Output>
-      <Time>2013-04-16T23:05:54.5365391-04:00</Time>
+      <Time>2013-04-26T23:46:53.2944102-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\TitleBackground.png</Source>

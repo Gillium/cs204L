@@ -27,7 +27,7 @@ namespace AOA
         Model theShape;
 
         // Overall scale factor to fit our object into our world
-        float objectScale = 0.34f;
+        float objectScale = 0.68f;
 
         // location and velocity of our object
         Vector3 position;

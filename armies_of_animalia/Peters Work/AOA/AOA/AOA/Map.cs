@@ -26,42 +26,29 @@ namespace AOA
             private set;
         }
 
+        public Point Spawn {
+            get;
+            private set;
+        }
+
+
+
         char[,] tiles; //
         public char[,] Tiles {
             get { return tiles; }
             protected set { tiles = value; }
         }
 
-        //char emptyTile;
-
-        public GameObject TileSheet {
-            get;
-            protected set;
-        }
-
-        public Point Spawn {
-            get;
-            private set;
-        }
-
         public Map(ContentManager content, string file,  
-            GameObject go, Point dimensions, char emptyTile, char spawnTile) {
+            Point dimensions, char emptyTile) {
             this.content = content;
             this.emptyTile = emptyTile;
-            this.SpawnTile = spawnTile;
 
             filename = file;
             tileRegions = new Dictionary<char, GameObject>();
             TileDimensions = dimensions;
 
-            LoadGameObject(go);
-
             ReadFile();
-        }
-
-        private void LoadGameObject(GameObject go) {
-            //go.Load(content);
-            TileSheet = go;
         }
 
         private void ReadFile() {
@@ -85,7 +72,7 @@ namespace AOA
                 for (int i = 0; i < height; i++) {
                     char c = l[i];
                     if (c.Equals(SpawnTile)) {
-                        Spawn = new Point(j, i); //i,j
+                        //Spawn = new Point(j, i); //i,j
                         c = emptyTile;
                     }
                     tiles[j, i] = c;//ij
@@ -119,9 +106,7 @@ namespace AOA
         }
 
         public void Draw(SpriteBatch spritebatch, Camera camera) {
-            if (TileSheet == null)
-                throw new Exception("Tile sheet cannot be null");
-            else if (tileRegions.Count == 0)
+            if (tileRegions.Count == 0)
                 throw new Exception("Tile region must be populated by calling AddRegion");
             else {
                 Rectangle bgRect = new Rectangle(0, 0, (int)(mapDimensions.X * TileDimensions.X),
@@ -146,7 +131,7 @@ namespace AOA
 
             for (int j = 0; j < mapDimensions.Y; j++) {
                 for (int i = 0; i < mapDimensions.X; i++) {
-                    if (tiles[i, j] != emptyTile) {
+                    if (tiles[i, j] != '*') {
                         //spritebatch.Draw(TileSheet, new Vector2(TileDimensions.X * i,
                         //    bgRect.Height - TileDimensions.Y * (j + 1)), tileRegions[tiles[i, j]],
                         //    Color.White);
