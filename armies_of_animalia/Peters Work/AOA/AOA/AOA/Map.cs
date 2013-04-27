@@ -150,10 +150,14 @@ namespace AOA
                         //spritebatch.Draw(TileSheet, new Vector2(TileDimensions.X * i,
                         //    bgRect.Height - TileDimensions.Y * (j + 1)), tileRegions[tiles[i, j]],
                         //    Color.White);
-                        TileSheet.Position = new Vector3(TileDimensions.X * i,
+
+                        //look up block type in dictionary and draw the block
+                        GameObject tile = tileRegions[tiles[i, j]];
+
+                        tile.Position = new Vector3(TileDimensions.X * i,
                                                          TileDimensions.Y * j, 0);
 //                            bgRect.Height - TileDimensions.Y * (j + 1), 10.0f);
-                        TileSheet.Draw(camera.ViewMatrix, camera.ProjectionMatrix);
+                        tile.Draw(camera.ViewMatrix, camera.ProjectionMatrix);
                     }
                 }
             }

@@ -35,6 +35,8 @@ namespace AOA
         Point currentFrame = new Point(0, 0);////
         Point sheetSize = new Point(5, 1); // the sheet has 5 frames, by 1 frames//
 
+        GameObject obj;
+
         public List<Point> CollisionPoints
         {
             get;
@@ -69,6 +71,11 @@ namespace AOA
         {
             texture = content.Load<Texture2D>(assetname);
         }
+
+        //public void LoadObj(ContentManager content, string assetname)
+        //{
+        //    obj = content.Load<GameObject>(assetname);
+        //}
 
         public Point GetTileLocation()
         {

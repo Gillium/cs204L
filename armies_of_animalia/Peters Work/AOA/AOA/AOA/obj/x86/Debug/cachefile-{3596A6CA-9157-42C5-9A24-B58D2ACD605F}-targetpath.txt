@@ -1,4 +1,3 @@
-Content\Objects\BuilldingBlock.xnb
 Content\Textures\SpriteSheet.xnb
 Content\Textures\StarsBG.xnb
 Content\Textures\BackCity.xnb
@@ -11,4 +10,13 @@ Content\Textures\StartButton.xnb
 Content\Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
 Content\Sounds\05DeathToAllEnemies.xnb
 Content\Sounds\05DeathToAllEnemies.wma
+Content\Objects\FoxPlayer.xnb
+Content\Textures\TitleBackground.xnb
+Content\Objects\WindowBlock.xnb
+Content\Objects\TopBlock.xnb
+Content\Objects\RightBlock.xnb
+Content\Objects\LeftBlock.xnb
+Content\Objects\basicBlock.xnb
+Content\Objects\leftCornerBlock.xnb
+Content\Objects\rightCornerBlock.xnb
 Content\level1.txt

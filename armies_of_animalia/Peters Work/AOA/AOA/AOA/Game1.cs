@@ -24,6 +24,7 @@ namespace AOA {
         //Player player;
         Camera camera;
         public static bool collision = false;
+        //GameObject player;
 
         //Backgrounds
         Level level1;
@@ -41,7 +42,15 @@ namespace AOA {
         Scrolling scrolling9;//extended level
 
         //Building blocks
-        GameObject buildingBlock;
+        GameObject basicBlock;
+        GameObject windowBlock;
+        GameObject topBlock;
+        GameObject rightBlock;
+        GameObject leftBlock;
+        GameObject rightCornerBlock;
+        GameObject leftCornerBlock;
+        GameObject belconyBlock;
+        GameObject[] tileSheet;
 
         //Gamestate commands
         enum GameState { TitleScreen = 0, GameStarted, GameEnded };
@@ -58,11 +67,16 @@ namespace AOA {
         bool OnButton1;
         bool OnButton2;
 
+        Texture2D TitleBackground;
+
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
+
+//            RasterizerState rState = new RasterizerState();
+//            rState.CullMode = CullMode.None;
         }
 
         protected override void Initialize() {
@@ -70,21 +84,49 @@ namespace AOA {
             Window.AllowUserResizing = true;
             camera = new Camera(GraphicsDevice.Viewport);
 
-            buildingBlock = new GameObject();
-            buildingBlock.initializeMovement(new Vector3(0,0,0),
-                                      new Vector3(0, 0, 0));
+            basicBlock = new GameObject();
+            basicBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+            windowBlock = new GameObject();
+            windowBlock.initializeMovement(new Vector3(0,0,0),
+                new Vector3(0, 0, 0));
+            topBlock = new GameObject();
+            topBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+            rightBlock = new GameObject();
+            rightBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+            leftBlock = new GameObject();
+            leftBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+            rightCornerBlock = new GameObject();
+            rightCornerBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+            leftCornerBlock = new GameObject();
+            leftCornerBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+            belconyBlock = new GameObject();
+            belconyBlock.initializeMovement(new Vector3(0, 0, 0),
+                new Vector3(0, 0, 0));
+
+            //player = new GameObject();
+            //player.initializeMovement(new Vector3(0, 0, 0),
+            //    new Vector3(0, 0, 0));
+
+            //tileSheet = new GameObject {windowBlock, topBlock, rightBlock, leftBlock, windowBlock, leftCornerBlock, rightCornerBlock};//TODO!
 
             map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
-                buildingBlock, new Point(50, 50), '*', 'P');
-            map1.AddRegion('X', buildingBlock);
-            map1.AddRegion('T', buildingBlock);
-            map1.AddRegion('>', buildingBlock);
-            map1.AddRegion('<', buildingBlock);
-            map1.AddRegion('E', buildingBlock); // enemy
-            map1.AddRegion('B', buildingBlock); // boss
-            map1.AddRegion('R', buildingBlock);
-            map1.AddRegion('A', buildingBlock);
-            map1.AddRegion('C', buildingBlock);
+                topBlock, new Point(50, 50), '*', 'P');
+                //tileSheet, new Point(50, 50), '*', 'P');
+            map1.AddRegion('X', windowBlock);
+            map1.AddRegion('T', topBlock);
+            map1.AddRegion('>', rightBlock);
+            map1.AddRegion('<', leftBlock);
+            map1.AddRegion('E', windowBlock); // enemy
+            map1.AddRegion('B', windowBlock); // boss
+            map1.AddRegion('R', windowBlock);
+            map1.AddRegion('A', leftCornerBlock);
+            map1.AddRegion('C', rightCornerBlock);
             map1.AddBackground("Textures/StarsBG");
             level1 = new Level(map1);
             currentGameState = GameState.TitleScreen;
@@ -118,9 +160,27 @@ namespace AOA {
             scrolling6 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(2048, height, 2048, 500));
             scrolling9 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(4096, height, 2048, 500));
 
-            // load the hunter's model
-            buildingBlock.Filename = "Objects\\BuilldingBlock";
-            buildingBlock.Load(Content);
+            // load block model's
+            basicBlock.Filename = "Objects\\basicBlock";
+            basicBlock.Load(Content);
+            windowBlock.Filename = "Objects\\WindowBlock";
+            windowBlock.Load(Content);
+            topBlock.Filename = "Objects\\topBlock";
+            topBlock.Load(Content);
+            leftBlock.Filename = "Objects\\leftBlock";
+            leftBlock.Load(Content);
+            rightBlock.Filename = "Objects\\rightBlock";
+            rightBlock.Load(Content);
+            leftCornerBlock.Filename = "Objects\\leftCornerBlock";
+            leftCornerBlock.Load(Content);
+            rightCornerBlock.Filename = "Objects\\rightCornerBlock";
+            rightCornerBlock.Load(Content);
+            //belconyBlock.Filename = "Objects\\belconyBlock";
+            //belconyBlock.Load(Content);
+
+            // Load player model
+            // player.Filename = "Objects\\FoxPlayer";
+            // player.Load(Content);
 
             // Titlescreen loads
             StartButton = Content.Load<Texture2D>(@"Textures\StartButton");
@@ -135,6 +195,8 @@ namespace AOA {
             MenuMusic = Content.Load<Song>(@"Sounds\05DeathToAllEnemies");
             MediaPlayer.IsRepeating = true;
             ButtonHover = Content.Load<SoundEffect>(@"Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX");
+
+            TitleBackground = Content.Load<Texture2D>(@"Textures\TitleBackground");
         }
 
         protected override void Update(GameTime gameTime) {
@@ -257,12 +319,16 @@ namespace AOA {
                 spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
                 spriteBatch.Draw(StartButton, StartGameButtonPosition, Color.White);
                 spriteBatch.Draw(QuitButton, QuitButtonPosition, Color.White);
+                spriteBatch.Draw(TitleBackground, new Rectangle(0, 0, TitleBackground.Width, TitleBackground.Height), Color.White);
                 spriteBatch.End();
             }
 
             if (currentGameState == GameState.GameStarted) {
-                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform); //
-                
+
+                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
+
+                GraphicsDevice.RasterizerState = RasterizerState.CullNone;
+                GraphicsDevice.DepthStencilState = DepthStencilState.Default;
                 //map1.DrawBackground(spriteBatch);
 
                 //draw paralaxingBackGround here

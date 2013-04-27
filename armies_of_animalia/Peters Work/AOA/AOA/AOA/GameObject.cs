@@ -159,6 +159,7 @@ namespace AOA
             Matrix pitchRotation = Matrix.CreateRotationX(0);
             Matrix yawRotation = Matrix.CreateRotationZ((float)(headingAngle + Math.PI / 2.0));
             Matrix rollRotation = Matrix.CreateRotationY((float)(headingAngle + Math.PI / 2.0));//
+//            Matrix rollRotation = Matrix.CreateRotationY((float)Math.PI);//
             Matrix translation = Matrix.CreateTranslation(position + 1.5f * Vector3.UnitZ);
 
             RootTransform = scale *             //1
