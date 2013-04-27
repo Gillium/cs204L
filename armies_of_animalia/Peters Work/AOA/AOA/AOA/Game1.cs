@@ -50,7 +50,6 @@ namespace AOA {
         GameObject rightCornerBlock;
         GameObject leftCornerBlock;
         GameObject belconyBlock;
-        GameObject[] tileSheet;
 
         //Gamestate commands
         enum GameState { TitleScreen = 0, GameStarted, GameEnded };
@@ -112,8 +111,6 @@ namespace AOA {
             //player = new GameObject();
             //player.initializeMovement(new Vector3(0, 0, 0),
             //    new Vector3(0, 0, 0));
-
-            //tileSheet = new GameObject {windowBlock, topBlock, rightBlock, leftBlock, windowBlock, leftCornerBlock, rightCornerBlock};//TODO!
 
             map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
                 topBlock, new Point(50, 50), '*', 'P');

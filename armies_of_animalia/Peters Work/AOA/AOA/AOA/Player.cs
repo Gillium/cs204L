@@ -93,7 +93,7 @@ namespace AOA
             //previousInput = currentInput;
             currentInput = Keyboard.GetState();
 
-            acceleration.Y = gravity;
+            acceleration.Y = -gravity;
 
             velocity -= movement;
             movement = Vector2.Zero;
@@ -109,10 +109,10 @@ namespace AOA
             }
             if (currentInput.IsKeyDown(Keys.Up))
             {
-                movement.Y -= speed * 1.5f;
+                movement.Y += speed * 1.5f;
             }
             if (currentInput.IsKeyDown(Keys.Down))
-                movement.Y += speed;
+                movement.Y -= speed;
 
             float deltatime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
