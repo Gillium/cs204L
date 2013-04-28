@@ -75,6 +75,7 @@
     <Compile Include="Backgrounds.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="BoundingBoxRenderer.cs" />
     <Compile Include="CollisionEventArgs.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Level.cs" />

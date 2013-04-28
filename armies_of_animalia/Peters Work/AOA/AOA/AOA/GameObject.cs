@@ -42,13 +42,23 @@ namespace AOA
         // unnecessary garbage.
         Matrix[] boneTransforms;
 
-        //float wingAngle = 0;
-        //float wingAngleIncrement = 3;
+        bool collision = false;
 
         #endregion
 
         #region Properties
 
+        public bool Collision
+        {
+            get { return collision; }
+            set { collision = value; }
+        }
+
+        public BoundingBox CollisionBox
+        {
+            get;
+            private set;
+        }
 
         /// <summary>
         /// Gets or sets the position
@@ -132,24 +142,9 @@ namespace AOA
         //        }
         //    }
         //    return false;
-        //}
+        //}  
 
-        public void Update(GameTime time)
-        {
-            float secondsElapsed = time.ElapsedGameTime.Seconds +
-                                   time.ElapsedGameTime.Milliseconds / 1000.0f;
-            position += velocity * secondsElapsed;
-
-            //wingAngle += (float)MathHelper.ToRadians(wingAngleIncrement);
-            //if (Math.Abs(wingAngle) > Math.PI / 4.0)
-            //    wingAngleIncrement *= -1;
-        }
-
-
-        /// <summary>
-        /// Draws the tank model, using the current animation settings.
-        /// </summary>
-        public void Draw(Matrix view, Matrix projection)
+        public void Draw(Matrix view, Matrix projection, GraphicsDevice g)
         {
             // Set the world matrix as the root transform of the model.
             Matrix scale = Matrix.CreateScale(objectScale,

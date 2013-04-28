@@ -43,6 +43,18 @@ namespace AOA
             private set;
         }
 
+        public BoundingBox CollisionBox
+        {
+            get;
+            private set;
+        }
+
+        public bool Collision
+        {
+            get;
+            private set;
+        }
+
         public Player(int tileX, int tileY, int tileWidth, int tileHeight)
         {
             this.tileWidth = tileWidth;
@@ -84,11 +96,12 @@ namespace AOA
 
         private Point GetTileLocation(Vector2 position)
         {
-            return new Point((int)(position.X / tileWidth), (int)(position.Y / tileHeight));
+            return new Point((int)(position.X / (int)(50 * .68)), (int)(position.Y / (int)(50 * .68)));
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, bool collision)
         {
+            Collision = collision;
             previousPosition = position;
             //previousInput = currentInput;
             currentInput = Keyboard.GetState();
@@ -123,30 +136,38 @@ namespace AOA
                 position.X = 0;
             if (position.Y <= 0)
                 position.Y = 0;
+
+            CollisionBox = new BoundingBox(new Vector3(position.X - (int)(10 * .68), position.Y, -(int)(60 * .68)),
+                new Vector3(position.X + (int)(30 * .68), position.Y + (int)(140 * .68), (int)(60 * .68)));
             
-            PopulateBoundPoints();
+           // PopulateBoundPoints();
 
-            Point loc = GetTileLocation(BoundPoints[0]);
-            CollisionPoints.Clear();
-            CollisionPoints.Add(loc);
+           // Point loc = GetTileLocation(BoundPoints[0]);
+           // CollisionPoints.Clear();
+           // CollisionPoints.Add(loc);
 
-            for (int i = 1; i < 4; i++)
-            {
-                loc = GetTileLocation(BoundPoints[i]);
-                if (!CollisionPoints.Contains(loc))
-                {
-                    CollisionPoints.Add(loc);
-                }
-            }
+            //for (int i = 1; i < 4; i++)
+            //{
+            //   loc = GetTileLocation(BoundPoints[i]);
+            //    if (!CollisionPoints.Contains(loc))
+            //    {
+            //        CollisionPoints.Add(loc);
+            //    }
+            //}
         }
 
         private void PopulateBoundPoints()
         {
-            BoundPoints.Clear();
-            BoundPoints.Add(position);
-            BoundPoints.Add(Vector2.Add(position, new Vector2(texture.Width - 1, 0)));
-            BoundPoints.Add(Vector2.Add(position, new Vector2(0, texture.Height - 1)));
-            BoundPoints.Add(Vector2.Add(position, new Vector2(texture.Width - 1, texture.Height - 1)));
+            //BoundPoints.Clear();
+            //BoundPoints.Add(position);
+            //BoundPoints.Add(Vector2.Add(position, new Vector2((int)(50*.68) - 1, 0)));
+            //BoundPoints.Add(Vector2.Add(position, new Vector2(0, (int)(50 * .68) - 1)));
+            //BoundPoints.Add(Vector2.Add(position, new Vector2((int)(50 * .68) - 1, (int)(50 * .68) - 1)));
+        }
+
+        public void HandleTileCollision()
+        {
+            position = previousPosition;
         }
 
         public void HandleTileCollision(Point collisionLocation)
@@ -155,10 +176,6 @@ namespace AOA
             float tileY = collisionLocation.Y * tileHeight;
             depthX = depthY = float.MaxValue;
 
-            Vector2 centerPlayer = new Vector2(position.X + texture.Width / 2, position.Y + texture.Height / 2);//
-            Vector2 centerTile = new Vector2(tileX + tileWidth / 2, tileY + tileHeight / 2);//
-
-            float angle = (float)Math.Atan((centerPlayer.Y - centerTile.Y) / (centerPlayer.X - centerTile.X));
             if (velocity.X < 0)
             {
                 depthX = (tileX + tileWidth) - position.X;
@@ -186,16 +203,17 @@ namespace AOA
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch, Camera camera)
+        public void Draw(SpriteBatch spriteBatch, Camera camera, GraphicsDevice g)
         {
-            spriteBatch.Draw(texture, position,
-                new Rectangle(currentFrame.X * frameSize.X, //first point starts at 0, 0
-                currentFrame.Y * frameSize.Y, //second at 0, 0
-                frameSize.X, //third, 128, 0
-                frameSize.Y), // fourth, 0,128
-                Color.White);
             obj.Position = new Vector3(position.X,position.Y, 0);
-            obj.Draw(camera.ViewMatrix, camera.ProjectionMatrix);
+            obj.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
+
+            BoundingBoxRenderer.Render(
+            CollisionBox,
+            g,
+            camera.ViewMatrix,
+            camera.ProjectionMatrix,
+            Collision ? Color.Red : Color.Green);
         }
     }
 }

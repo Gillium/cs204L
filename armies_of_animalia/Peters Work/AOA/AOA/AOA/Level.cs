@@ -26,27 +26,33 @@ namespace AOA
         public void Update(GameTime gameTime)
         {
             bool collision = false;
-            Player.Update(gameTime);
-            foreach (Point p in Player.CollisionPoints)
+           
+            //foreach (Point p in Player.CollisionPoints)
+            //{
+            //    if (activateMap.CheckCollision(p))
+            //    {
+            //        Player.HandleTileCollision(p);
+            //        collision = true;
+            //    }
+            //}
+            if (activateMap.CheckCollision(Player))
             {
-                if (activateMap.CheckCollision(p))
-                {
-                    Player.HandleTileCollision(p);
-                    collision = true;
-                }
+                //Player.HandleTileCollision();
+                collision = true;
             }
+            Player.Update(gameTime, collision);
             Game1.collision = collision;
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Camera camera)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Camera camera, GraphicsDevice g)
         {
-            Player.Draw(spriteBatch, camera);
+            Player.Draw(spriteBatch, camera, g);
         }
 
-        public void DrawBackgound(GameTime gameTime, SpriteBatch spriteBatch, Camera camera)
+        public void DrawMap(GameTime gameTime, Camera camera, GraphicsDevice g)
         {
             if (activateMap != null)
-                activateMap.Draw(spriteBatch, camera);
+                activateMap.Draw(camera, g, Player);
         }
     }
 }

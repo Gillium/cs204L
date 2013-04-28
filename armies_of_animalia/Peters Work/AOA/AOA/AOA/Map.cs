@@ -99,23 +99,36 @@ namespace AOA
                 return true;
             int mapHeight = (int)mapDimensions.Y - 1;
             if (movingTileLocation.X < mapDimensions.X && movingTileLocation.Y < mapDimensions.Y &&
-                !tiles[movingTileLocation.X, mapHeight - movingTileLocation.Y].Equals(emptyTile))
-                return true;
+                !tiles[movingTileLocation.X, mapHeight - movingTileLocation.Y].Equals('*'))
+                return true; // do bounding box intersection here
 
             return false;
         }
 
-        public void Draw(SpriteBatch spritebatch, Camera camera) {
+        public bool CheckCollision(Player p)
+        {
+            Vector3[] corners = p.CollisionBox.GetCorners();
+            if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
+                return true;
+            if (((corners[0].X + 50) / 100) < 1)
+                return true;
+            if (((int)((p.PlayerPostion().X + 50) / 100) < mapDimensions.X) && ((int)((p.PlayerPostion().Y + 50) / 100) < mapDimensions.Y) && !tiles[(int)((p.PlayerPostion().X + 50) / 100), (int)((p.PlayerPostion().Y + 50) / 100)].Equals('*'))
+            {
+                GameObject go = tileRegions[tiles[(int)((p.PlayerPostion().X + 50) / 100), (int)((p.PlayerPostion().Y + 50) / 100)]];
+                go.Collision = true;
+                return true;
+            }
+            return false;
+        }
+
+        public void Draw(Camera camera, GraphicsDevice g, Player p) {
             if (tileRegions.Count == 0)
                 throw new Exception("Tile region must be populated by calling AddRegion");
             else {
                 Rectangle bgRect = new Rectangle(0, 0, (int)(mapDimensions.X * TileDimensions.X),
                     (int)(mapDimensions.Y * TileDimensions.Y));
  
-                //if (background != null)
-                  //  spritebatch.Draw(background, bgRect, Color.White);
-
-                DrawTiles(spritebatch, camera);
+                DrawTiles(camera, g, p);
             }
         }
 
@@ -124,7 +137,7 @@ namespace AOA
                      (int)(mapDimensions.Y * TileDimensions.Y)), Color.White);
         }
 
-        private void DrawTiles(SpriteBatch spritebatch, Camera camera)
+        private void DrawTiles(Camera camera, GraphicsDevice g, Player p)
         {
             Rectangle bgRect = new Rectangle(0, 0, (int)(mapDimensions.X * TileDimensions.X),
                 (int)(mapDimensions.Y * TileDimensions.Y));
@@ -132,17 +145,14 @@ namespace AOA
             for (int j = 0; j < mapDimensions.Y; j++) {
                 for (int i = 0; i < mapDimensions.X; i++) {
                     if (tiles[i, j] != '*') {
-                        //spritebatch.Draw(TileSheet, new Vector2(TileDimensions.X * i,
-                        //    bgRect.Height - TileDimensions.Y * (j + 1)), tileRegions[tiles[i, j]],
-                        //    Color.White);
-
                         //look up block type in dictionary and draw the block
                         GameObject tile = tileRegions[tiles[i, j]];
-
                         tile.Position = new Vector3(TileDimensions.X * i,
                                                          TileDimensions.Y * j, 0);
-//                            bgRect.Height - TileDimensions.Y * (j + 1), 10.0f);
-                        tile.Draw(camera.ViewMatrix, camera.ProjectionMatrix);
+                        ////tron mode
+                        //tile.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
+                        BoundingBox bb = new BoundingBox(new Vector3(tile.Position.X - (int)(60 * .68), tile.Position.Y, -(int)(60 * .68)), new Vector3(tile.Position.X + (int)(80 * .68), tile.Position.Y + (int)(140 * .68), (int)(60 * .68)));
+                        BoundingBoxRenderer.Render(bb, g, camera.ViewMatrix, camera.ProjectionMatrix,  p.CollisionBox.Intersects(bb) ? Color.Red : Color.Green);
                     }
                 }
             }

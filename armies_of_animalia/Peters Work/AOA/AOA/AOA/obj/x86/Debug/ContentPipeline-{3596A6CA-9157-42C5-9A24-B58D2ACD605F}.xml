@@ -1,6 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Objects\leftCornerBlock.FBX</Source>
+      <Name>Objects\leftCornerBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\leftCornerBlock.xnb</Output>
+      <Time>2013-04-27T19:59:14.4488091-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\leftCornerBlock_0.xml</Key>
+        <Value>2013-04-27T23:30:41.20345-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Objects\leftBlock.FBX</Source>
+      <Name>Objects\leftBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\leftBlock.xnb</Output>
+      <Time>2013-04-27T20:05:04.2288154-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\leftBlock_0.xml</Key>
+        <Value>2013-04-27T23:30:41.5654707-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Objects\rightBlock.FBX</Source>
+      <Name>Objects\rightBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\rightBlock.xnb</Output>
+      <Time>2013-04-27T20:09:43.2517746-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\rightBlock_0.xml</Key>
+        <Value>2013-04-27T23:30:41.6544758-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Objects\rightCornerBlock.FBX</Source>
+      <Name>Objects\rightCornerBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\rightCornerBlock.xnb</Output>
+      <Time>2013-04-27T20:11:51.8791317-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\rightCornerBlock_0.xml</Key>
+        <Value>2013-04-27T23:30:41.7554816-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Objects\plainBlock.FBX</Source>
+      <Name>Objects\plainBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\plainBlock.xnb</Output>
+      <Time>2013-04-27T20:21:44.6830381-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\plainBlock_0.xml</Key>
+        <Value>2013-04-27T23:30:41.8354861-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Objects\enemy.FBX</Source>
+      <Name>Objects\enemy</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\enemy.xnb</Output>
+      <Time>2013-04-27T21:08:55.3929455-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\enemy_0.xml</Key>
+        <Value>2013-04-27T23:30:42.9195481-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Textures\enemy.FBX</Source>
+      <Name>Textures\enemy</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\enemy.xnb</Output>
+      <Time>2013-04-27T21:08:07.8322251-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Textures\enemy_0.xml</Key>
+        <Value>2013-04-27T23:30:44.2196225-04:00</Value>
+      </Dependency>
+    </Item>
     <Item>
       <Source>Textures\SpriteSheet.png</Source>
       <Name>Textures\SpriteSheet</Name>
@@ -83,6 +178,24 @@
       <Time>2013-04-16T18:58:57.6636418-04:00</Time>
     </Item>
     <Item>
+      <Source>Textures\TitleBackground.png</Source>
+      <Name>Textures\TitleBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\TitleBackground.xnb</Output>
+      <Time>2013-04-16T23:52:51.4166554-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG</Source>
+      <Name>Objects\9eca008a4c02753f0b3b8b2de39ab161</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161.xnb</Output>
+      <Time>2013-04-27T19:59:14.4058067-04:00</Time>
+    </Item>
+    <Item>
       <Source>Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.wav</Source>
       <Name>Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX</Name>
       <Importer>WavImporter</Importer>
@@ -102,173 +215,69 @@
       <Time>2013-04-16T19:21:02.6181318-04:00</Time>
     </Item>
     <Item>
-      <Source>Objects\FoxPlayer.FBX</Source>
-      <Name>Objects\FoxPlayer</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\FoxPlayer.xnb</Output>
-      <Time>2013-04-26T23:46:53.2944102-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\FoxPlayer_0.xml</Key>
-        <Value>2013-04-26T23:46:56.8676146-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\FoxPlayer.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\FoxPlayer_0.xml</Output>
-      <Time>2013-04-26T23:46:53.2944102-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\TitleBackground.png</Source>
-      <Name>Textures\TitleBackground</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\TitleBackground.xnb</Output>
-      <Time>2013-04-16T23:52:51.4166554-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Objects\WindowBlock.FBX</Source>
-      <Name>Objects\WindowBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\WindowBlock.xnb</Output>
-      <Time>2013-04-02T23:15:25.1288867-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\WindowBlock_0.xml</Key>
-        <Value>2013-04-17T16:31:11.9120762-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\WindowBlock.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\WindowBlock_0.xml</Output>
-      <Time>2013-04-02T23:15:25.1288867-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Objects\TopBlock.FBX</Source>
-      <Name>Objects\TopBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\TopBlock.xnb</Output>
-      <Time>2013-04-18T08:37:33.4884654-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\TopBlock_0.xml</Key>
-        <Value>2013-04-18T08:41:24.7266915-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\TopBlock.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\TopBlock_0.xml</Output>
-      <Time>2013-04-18T08:37:33.4884654-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Objects\RightBlock.FBX</Source>
-      <Name>Objects\RightBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\RightBlock.xnb</Output>
-      <Time>2013-04-18T08:37:33.4804649-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\RightBlock_0.xml</Key>
-        <Value>2013-04-18T08:41:24.561682-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\RightBlock.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\RightBlock_0.xml</Output>
-      <Time>2013-04-18T08:37:33.4804649-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Objects\LeftBlock.FBX</Source>
-      <Name>Objects\LeftBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\LeftBlock.xnb</Output>
-      <Time>2013-04-18T08:37:33.4714644-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\LeftBlock_0.xml</Key>
-        <Value>2013-04-18T08:41:24.3486698-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\LeftBlock.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\LeftBlock_0.xml</Output>
-      <Time>2013-04-18T08:37:33.4714644-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Objects\basicBlock.FBX</Source>
-      <Name>Objects\basicBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\basicBlock.xnb</Output>
-      <Time>2013-04-18T08:37:33.4494632-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\basicBlock_0.xml</Key>
-        <Value>2013-04-18T08:41:23.8306402-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\leftCornerBlock.FBX</Source>
-      <Name>Objects\leftCornerBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\leftCornerBlock.xnb</Output>
-      <Time>2013-04-18T08:37:33.4754647-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\leftCornerBlock_0.xml</Key>
-        <Value>2013-04-18T08:41:24.4516757-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\rightCornerBlock.FBX</Source>
-      <Name>Objects\rightCornerBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\rightCornerBlock.xnb</Output>
-      <Time>2013-04-18T08:37:33.4834651-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\rightCornerBlock_0.xml</Key>
-        <Value>2013-04-18T08:41:24.6476869-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Objects\basicBlock.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\basicBlock_0.xml</Output>
-      <Time>2013-04-18T08:37:33.4494632-04:00</Time>
-    </Item>
-    <Item>
       <Source>Objects\leftCornerBlock.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\leftCornerBlock_0.xml</Output>
-      <Time>2013-04-18T08:37:33.4754647-04:00</Time>
+      <Time>2013-04-27T19:59:14.4488091-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Output>
+      <Time>2013-04-27T19:59:14.4058067-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\leftBlock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\leftBlock_0.xml</Output>
+      <Time>2013-04-27T20:05:04.2288154-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\rightBlock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\rightBlock_0.xml</Output>
+      <Time>2013-04-27T20:09:43.2517746-04:00</Time>
     </Item>
     <Item>
       <Source>Objects\rightCornerBlock.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\rightCornerBlock_0.xml</Output>
-      <Time>2013-04-18T08:37:33.4834651-04:00</Time>
+      <Time>2013-04-27T20:11:51.8791317-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\plainBlock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\plainBlock_0.xml</Output>
+      <Time>2013-04-27T20:21:44.6830381-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\enemy.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\enemy_0.xml</Output>
+      <Time>2013-04-27T21:08:55.3929455-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\enemy.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Textures\enemy_0.xml</Output>
+      <Time>2013-04-27T21:08:07.8322251-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

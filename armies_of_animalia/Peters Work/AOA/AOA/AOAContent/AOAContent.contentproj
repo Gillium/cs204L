@@ -34,23 +34,13 @@
       <Name>level1</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="Objects\WindowBlock.FBX">
-      <Name>WindowBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Objects\basicBlock.FBX">
-      <Name>basicBlock</Name>
+    <Compile Include="Objects\leftCornerBlock.FBX">
+      <Name>leftCornerBlock</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
     <Compile Include="Objects\leftBlock.FBX">
       <Name>leftBlock</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Objects\leftCornerBlock.FBX">
-      <Name>leftCornerBlock</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -64,13 +54,18 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Objects\topBlock.FBX">
-      <Name>topBlock</Name>
+    <Compile Include="Objects\plainBlock.FBX">
+      <Name>plainBlock</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Objects\foxPlayer.FBX">
-      <Name>foxPlayer</Name>
+    <Compile Include="Objects\enemy.FBX">
+      <Name>enemy</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\enemy.FBX">
+      <Name>enemy</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -145,6 +140,14 @@
   <ItemGroup>
     <Compile Include="Textures\TitleBackground.png">
       <Name>TitleBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG">
+      <Name>9eca008a4c02753f0b3b8b2de39ab161</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

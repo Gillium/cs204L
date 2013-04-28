@@ -36,11 +36,28 @@ C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\
 C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.exe
 C:\Users\Gillium\Documents\DWC\Spring 2013\cs204L\Group Project 2.0\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.pdb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\leftCornerBlock.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\leftBlock.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\rightBlock.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\rightCornerBlock.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\plainBlock.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\enemy.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\enemy.xnb
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\SpriteSheet.xnb
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StarsBG.xnb
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\BackCity.xnb
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\ForeGround.xnb
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\MidGroundCity.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\QuitButton 2.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\QuitButton.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StartButton 2.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StartButton.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\TitleBackground.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\05DeathToAllEnemies.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb
+C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\05DeathToAllEnemies.wma
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\level1.txt
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\AOA.exe
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\AOA.pdb
@@ -48,19 +65,3 @@ C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.exe
 C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\AOA.pdb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\QuitButton 2.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\QuitButton.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StartButton 2.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\StartButton.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\05DeathToAllEnemies.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Sounds\05DeathToAllEnemies.wma
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\FoxPlayer.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\TitleBackground.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\WindowBlock.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\TopBlock.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\RightBlock.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\LeftBlock.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\basicBlock.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\leftCornerBlock.xnb
-C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\rightCornerBlock.xnb

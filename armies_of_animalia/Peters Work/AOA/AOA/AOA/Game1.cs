@@ -42,14 +42,13 @@ namespace AOA {
         Scrolling scrolling9;//extended level
 
         //Building blocks
-        GameObject basicBlock;
         GameObject windowBlock;
         GameObject topBlock;
         GameObject rightBlock;
         GameObject leftBlock;
         GameObject rightCornerBlock;
         GameObject leftCornerBlock;
-        GameObject belconyBlock;
+        GameObject porchBlock;
 
         //Gamestate commands
         enum GameState { TitleScreen = 0, GameStarted, GameEnded };
@@ -83,9 +82,6 @@ namespace AOA {
             Window.AllowUserResizing = true;
             camera = new Camera(GraphicsDevice.Viewport);
 
-            basicBlock = new GameObject();
-            basicBlock.initializeMovement(new Vector3(0, 0, 0),
-                new Vector3(0, 0, 0));
             windowBlock = new GameObject();
             windowBlock.initializeMovement(new Vector3(0,0,0),
                 new Vector3(0, 0, 0));
@@ -104,8 +100,8 @@ namespace AOA {
             leftCornerBlock = new GameObject();
             leftCornerBlock.initializeMovement(new Vector3(0, 0, 0),
                 new Vector3(0, 0, 0));
-            belconyBlock = new GameObject();
-            belconyBlock.initializeMovement(new Vector3(0, 0, 0),
+            porchBlock = new GameObject();
+            porchBlock.initializeMovement(new Vector3(0, 0, 0),
                 new Vector3(0, 0, 0));
 
             player = new GameObject();
@@ -121,7 +117,7 @@ namespace AOA {
             map1.AddRegion('<', leftBlock);
             map1.AddRegion('E', windowBlock); // enemy
             map1.AddRegion('B', windowBlock); // boss
-            map1.AddRegion('R', windowBlock);
+            map1.AddRegion('R', porchBlock);
             map1.AddRegion('A', leftCornerBlock);
             map1.AddRegion('C', rightCornerBlock);
             map1.AddBackground("Textures/StarsBG");
@@ -158,11 +154,9 @@ namespace AOA {
             scrolling9 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(4096, height, 2048, 500));
 
             // load block model's
-            basicBlock.Filename = "Objects\\basicBlock";
-            basicBlock.Load(Content);
-            windowBlock.Filename = "Objects\\WindowBlock";
+            windowBlock.Filename = "Objects\\plainBlock";
             windowBlock.Load(Content);
-            topBlock.Filename = "Objects\\topBlock";
+            topBlock.Filename = "Objects\\plainBlock";
             topBlock.Load(Content);
             leftBlock.Filename = "Objects\\leftBlock";
             leftBlock.Load(Content);
@@ -172,11 +166,11 @@ namespace AOA {
             leftCornerBlock.Load(Content);
             rightCornerBlock.Filename = "Objects\\rightCornerBlock";
             rightCornerBlock.Load(Content);
-            //belconyBlock.Filename = "Objects\\belconyBlock";
-            //belconyBlock.Load(Content);
+            porchBlock.Filename = "Objects\\plainBlock";
+            porchBlock.Load(Content);
 
             //Load player model
-            player.Filename = "Objects\\foxPlayer";
+            player.Filename = "Objects\\enemy";
             player.Load(Content);
 
             level1.Player.LoadObj(player);
@@ -343,11 +337,10 @@ namespace AOA {
                 //scrolling2.Draw(spriteBatch);
                 //scrolling7.Draw(spriteBatch);
 
-                //draw background here
-                level1.DrawBackgound(gameTime, spriteBatch, camera);
+                level1.DrawMap(gameTime, camera, graphics.GraphicsDevice);
 
                 // draw player here
-                level1.Draw(gameTime, spriteBatch, camera);
+                level1.Draw(gameTime, spriteBatch, camera, graphics.GraphicsDevice);
 
                 spriteBatch.End();
             }
