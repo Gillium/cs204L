@@ -109,7 +109,7 @@ namespace AOA {
                 new Vector3(0, 0, 0));
 
             map1 = new Map(Content, Path.Combine(Content.RootDirectory, "level1.txt"),
-               new Point(100, 100), '*');
+               new Point(100, 100), '*', 'P');
             map1.AddRegion('P', player);
             map1.AddRegion('X', windowBlock);
             map1.AddRegion('T', topBlock);

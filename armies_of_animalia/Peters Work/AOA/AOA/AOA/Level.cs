@@ -19,25 +19,18 @@ namespace AOA
 
         public Level(Map map)
         {
-            Player = new Player(map.Spawn.X, map.Spawn.Y, map.TileDimensions.X, map.TileDimensions.Y);
+            Player = new Player(map.SpawnPoint.X, map.SpawnPoint.Y, map.TileDimensions.X, map.TileDimensions.Y);
             activateMap = map;
         }
 
         public void Update(GameTime gameTime)
         {
             bool collision = false;
-           
-            //foreach (Point p in Player.CollisionPoints)
-            //{
-            //    if (activateMap.CheckCollision(p))
-            //    {
-            //        Player.HandleTileCollision(p);
-            //        collision = true;
-            //    }
-            //}
+
+            BoundingBox bb = new BoundingBox();
             if (activateMap.CheckCollision(Player))
             {
-                //Player.HandleTileCollision();
+                Player.HandleTileCollision(activateMap.mapDimensions);
                 collision = true;
             }
             Player.Update(gameTime, collision);

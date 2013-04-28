@@ -36,6 +36,7 @@ namespace AOA
         Point sheetSize = new Point(5, 1); // the sheet has 5 frames, by 1 frames//
 
         GameObject obj;
+        BoundingBox mergedBox;
 
         public List<Point> CollisionPoints
         {
@@ -47,6 +48,12 @@ namespace AOA
         {
             get;
             private set;
+        }
+
+        public BoundingBox MergedBox
+        {
+            get { return mergedBox; }
+            set { mergedBox = value; }
         }
 
         public bool Collision
@@ -138,68 +145,46 @@ namespace AOA
                 position.Y = 0;
 
             CollisionBox = new BoundingBox(new Vector3(position.X - (int)(10 * .68), position.Y, -(int)(60 * .68)),
-                new Vector3(position.X + (int)(30 * .68), position.Y + (int)(140 * .68), (int)(60 * .68)));
-            
-           // PopulateBoundPoints();
-
-           // Point loc = GetTileLocation(BoundPoints[0]);
-           // CollisionPoints.Clear();
-           // CollisionPoints.Add(loc);
-
-            //for (int i = 1; i < 4; i++)
-            //{
-            //   loc = GetTileLocation(BoundPoints[i]);
-            //    if (!CollisionPoints.Contains(loc))
-            //    {
-            //        CollisionPoints.Add(loc);
-            //    }
-            //}
+                new Vector3(position.X + (int)(30 * .68), position.Y + (int)(140 * .68), (int)(60 * .68)));       
         }
 
-        private void PopulateBoundPoints()
+        public void HandleTileCollision(Vector2 mapDimensions)
         {
-            //BoundPoints.Clear();
-            //BoundPoints.Add(position);
-            //BoundPoints.Add(Vector2.Add(position, new Vector2((int)(50*.68) - 1, 0)));
-            //BoundPoints.Add(Vector2.Add(position, new Vector2(0, (int)(50 * .68) - 1)));
-            //BoundPoints.Add(Vector2.Add(position, new Vector2((int)(50 * .68) - 1, (int)(50 * .68) - 1)));
-        }
+            Vector3[] corners = CollisionBox.GetCorners();
+            if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
+                position = previousPosition;
+            else if (((corners[0].X + 50) / 100) < 1)
+                position = previousPosition;
+            else
+            {
+                depthX = depthY = float.MaxValue;
+                Vector3[] v = MergedBox.GetCorners();
 
-        public void HandleTileCollision()
-        {
-            position = previousPosition;
-        }
+                if (velocity.X < 0)
+                {
+                    depthX = 0;
+                }
+                else if (velocity.X > 0)
+                {
+                    depthX = 0;
+                }
+                if (velocity.Y < 0)
+                {
+                    depthY = 0;
+                }
+                else if (velocity.Y > 0)
+                {
+                    depthY = 0;
+                }
 
-        public void HandleTileCollision(Point collisionLocation)
-        {
-            float tileX = collisionLocation.X * tileWidth;
-            float tileY = collisionLocation.Y * tileHeight;
-            depthX = depthY = float.MaxValue;
-
-            if (velocity.X < 0)
-            {
-                depthX = (tileX + tileWidth) - position.X;
-            }
-            else if (velocity.X > 0)
-            {
-                depthX = tileX - (position.X + texture.Width);
-            }
-            if (velocity.Y < 0)
-            {
-                depthY = (tileY + tileHeight) - position.Y;
-            }
-            else if (velocity.Y > 0)
-            {
-                depthY = tileY - (position.Y + texture.Height);
-            }
-
-            if (Math.Abs(depthY) <= Math.Abs(depthX))
-            {
-                position += new Vector2(0, depthY);
-            }
-            else if (Math.Abs(depthY) > Math.Abs(depthX))
-            {
-                position += new Vector2(depthX, 0);
+                if (Math.Abs(depthY) <= Math.Abs(depthX))
+                {
+                    position = previousPosition + new Vector2(0, depthY);
+                }
+                else if (Math.Abs(depthY) > Math.Abs(depthX))
+                {
+                    position = previousPosition + new Vector2(depthX, 0);
+                }
             }
         }
 

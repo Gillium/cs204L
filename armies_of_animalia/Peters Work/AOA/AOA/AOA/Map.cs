@@ -17,7 +17,7 @@ namespace AOA
         public Texture2D background;
         ContentManager content;
         string filename;
-        char emptyTile, SpawnTile;
+        char emptyTile, spawnTile;
 
         public Vector2 mapDimensions = Vector2.Zero;
 
@@ -26,7 +26,7 @@ namespace AOA
             private set;
         }
 
-        public Point Spawn {
+        public Point SpawnPoint {
             get;
             private set;
         }
@@ -40,9 +40,10 @@ namespace AOA
         }
 
         public Map(ContentManager content, string file,  
-            Point dimensions, char emptyTile) {
+            Point dimensions, char et, char st) {
             this.content = content;
-            this.emptyTile = emptyTile;
+            this.emptyTile = et;
+            this.spawnTile = st;
 
             filename = file;
             tileRegions = new Dictionary<char, GameObject>();
@@ -71,8 +72,8 @@ namespace AOA
                 string l = linesFromFile[j];
                 for (int i = 0; i < height; i++) {
                     char c = l[i];
-                    if (c.Equals(SpawnTile)) {
-                        //Spawn = new Point(j, i); //i,j
+                    if (c.Equals(spawnTile)) {  
+                        SpawnPoint = new Point(j, i);
                         c = emptyTile;
                     }
                     tiles[j, i] = c;//ij
@@ -107,16 +108,19 @@ namespace AOA
 
         public bool CheckCollision(Player p)
         {
+            int i = (int)((p.PlayerPostion().X + 50) / 100);
+            int j = (int)((p.PlayerPostion().Y + 50) / 100);
             Vector3[] corners = p.CollisionBox.GetCorners();
             if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
                 return true;
             if (((corners[0].X + 50) / 100) < 1)
                 return true;
-            if (((int)((p.PlayerPostion().X + 50) / 100) < mapDimensions.X) && ((int)((p.PlayerPostion().Y + 50) / 100) < mapDimensions.Y) && !tiles[(int)((p.PlayerPostion().X + 50) / 100), (int)((p.PlayerPostion().Y + 50) / 100)].Equals('*'))
+            if ((i < mapDimensions.X) && (j < mapDimensions.Y) && !tiles[i, j].Equals('*'))
             {
-                GameObject go = tileRegions[tiles[(int)((p.PlayerPostion().X + 50) / 100), (int)((p.PlayerPostion().Y + 50) / 100)]];
-                go.Collision = true;
-                return true;
+                Vector3 pos = new Vector3(TileDimensions.X * i, TileDimensions.Y * j, 0);
+                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(60 * .68), pos.Y, -(int)(60 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
+                p.MergedBox = BoundingBox.CreateMerged(bb, p.CollisionBox);
+                return p.CollisionBox.Intersects(bb);
             }
             return false;
         }
@@ -147,8 +151,7 @@ namespace AOA
                     if (tiles[i, j] != '*') {
                         //look up block type in dictionary and draw the block
                         GameObject tile = tileRegions[tiles[i, j]];
-                        tile.Position = new Vector3(TileDimensions.X * i,
-                                                         TileDimensions.Y * j, 0);
+                        tile.Position = new Vector3(TileDimensions.X * i, TileDimensions.Y * j, 0);
                         ////tron mode
                         //tile.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
                         BoundingBox bb = new BoundingBox(new Vector3(tile.Position.X - (int)(60 * .68), tile.Position.Y, -(int)(60 * .68)), new Vector3(tile.Position.X + (int)(80 * .68), tile.Position.Y + (int)(140 * .68), (int)(60 * .68)));
