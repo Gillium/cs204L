@@ -30,17 +30,6 @@ namespace AOA {
         Level level1;
         Map map1;
 
-        //Scrolling background;
-        Scrolling scrolling1;
-        Scrolling scrolling2;
-        Scrolling scrolling3;
-        Scrolling scrolling4;
-        Scrolling scrolling5;
-        Scrolling scrolling6;
-        Scrolling scrolling7;//extended level
-        Scrolling scrolling8;//extended level
-        Scrolling scrolling9;//extended level
-
         //Building blocks
         GameObject windowBlock;
         GameObject topBlock;
@@ -49,6 +38,7 @@ namespace AOA {
         GameObject rightCornerBlock;
         GameObject leftCornerBlock;
         GameObject porchBlock;
+        GameObject backgroundBlocks;
 
         //Gamestate commands
         enum GameState { TitleScreen = 0, GameStarted, GameEnded };
@@ -103,6 +93,8 @@ namespace AOA {
             porchBlock = new GameObject();
             porchBlock.initializeMovement(new Vector3(0, 0, 0),
                 new Vector3(0, 0, 0));
+            backgroundBlocks = new GameObject();
+            backgroundBlocks.initializeMovement(new Vector3(0, 100, -4000), new Vector3(0, 0, 0));
 
             player = new GameObject();
             player.initializeMovement(new Vector3(0, 0, 0),
@@ -120,7 +112,7 @@ namespace AOA {
             map1.AddRegion('R', porchBlock);
             map1.AddRegion('A', leftCornerBlock);
             map1.AddRegion('C', rightCornerBlock);
-            map1.AddBackground("Textures/StarsBG");
+            map1.AddBackground(backgroundBlocks);
             level1 = new Level(map1);
             currentGameState = GameState.TitleScreen;
 
@@ -139,20 +131,6 @@ namespace AOA {
             level1.Player.LoadTexture(Content, "Textures/SpriteSheet");
             //level1.Player.LoadTexture(Content, "Textures/char Sheetcorret Sizes");
 
-            // Paralax background loads
-            int height = 1000;//(int)map1.mapDimensions.Y;
-            scrolling1 = new Scrolling(Content.Load<Texture2D>(@"Textures\ForeGround"), new Rectangle(0, height, 2048, 500));  //800,500 default size
-            scrolling2 = new Scrolling(Content.Load<Texture2D>(@"Textures\ForeGround"), new Rectangle(2048, height, 2048, 500));
-            scrolling7 = new Scrolling(Content.Load<Texture2D>(@"Textures\ForeGround"), new Rectangle(4096, height, 2048, 500));
-
-            scrolling3 = new Scrolling(Content.Load<Texture2D>(@"Textures\MidGroundCity"), new Rectangle(0, height, 2048, 500));
-            scrolling4 = new Scrolling(Content.Load<Texture2D>(@"Textures\MidGroundCity"), new Rectangle(2048, height, 2048, 500));
-            scrolling8 = new Scrolling(Content.Load<Texture2D>(@"Textures\MidGroundCity"), new Rectangle(4096, height, 2048, 500));
-
-            scrolling5 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(0, height, 2048, 500));
-            scrolling6 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(2048, height, 2048, 500));
-            scrolling9 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(4096, height, 2048, 500));
-
             // load block model's
             windowBlock.Filename = "Objects\\windowBlock";
             windowBlock.Load(Content);
@@ -168,6 +146,8 @@ namespace AOA {
             rightCornerBlock.Load(Content);
             porchBlock.Filename = "Objects\\porchBlock";
             porchBlock.Load(Content);
+            backgroundBlocks.Filename = "Objects\\cityBackground";
+            backgroundBlocks.Load(Content);
 
             //Load player model
             player.Filename = "Objects\\enemy";
@@ -261,39 +241,6 @@ namespace AOA {
                 level1.Update(gameTime);
                 camera.Update(gameTime, level1.Player);
 
-                //scrolling background
-                if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
-                    scrolling1.rectangle.X = scrolling2.rectangle.X + scrolling2.texture.Width;
-                if (scrolling2.rectangle.X + scrolling2.texture.Width <= 0)
-                    scrolling2.rectangle.X = scrolling7.rectangle.X + scrolling7.texture.Width;
-                if (scrolling7.rectangle.X + scrolling7.texture.Width <= 0)
-                    scrolling7.rectangle.X = scrolling1.rectangle.X + scrolling1.texture.Width;
-
-                if (scrolling3.rectangle.X + scrolling3.texture.Width <= 0)
-                    scrolling3.rectangle.X = scrolling4.rectangle.X + scrolling4.texture.Width;
-                if (scrolling4.rectangle.X + scrolling4.texture.Width <= 0)
-                    scrolling4.rectangle.X = scrolling8.rectangle.X + scrolling8.texture.Width;
-                if (scrolling8.rectangle.X + scrolling8.texture.Width <= 0)
-                    scrolling8.rectangle.X = scrolling3.rectangle.X + scrolling3.texture.Width;
-
-                if (scrolling5.rectangle.X + scrolling5.texture.Width <= 0)
-                    scrolling5.rectangle.X = scrolling6.rectangle.X + scrolling6.texture.Width;
-                if (scrolling6.rectangle.X + scrolling6.texture.Width <= 0)
-                    scrolling6.rectangle.X = scrolling9.rectangle.X + scrolling9.texture.Width;
-                if (scrolling9.rectangle.X + scrolling9.texture.Width <= 0)
-                    scrolling9.rectangle.X = scrolling5.rectangle.X + scrolling5.texture.Width;
-
-                scrolling1.Update();
-                scrolling2.Update();
-                scrolling7.Update();
-
-                scrolling3.Update2();
-                scrolling4.Update2();
-                scrolling8.Update2();
-
-                scrolling5.Update3();
-                scrolling6.Update3();
-                scrolling9.Update3();
             } else if (currentGameState == GameState.GameEnded) {
                 // end commands eg Credits, gameover screen
             }
@@ -322,20 +269,7 @@ namespace AOA {
 
                 GraphicsDevice.RasterizerState = RasterizerState.CullNone;
                 GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-                //map1.DrawBackground(spriteBatch);
-
-                //draw paralaxingBackGround here
-                //scrolling5.Draw(spriteBatch);
-                //scrolling6.Draw(spriteBatch);
-                //scrolling9.Draw(spriteBatch);
-
-                //scrolling3.Draw(spriteBatch);
-                //scrolling4.Draw(spriteBatch);
-                //scrolling8.Draw(spriteBatch);
-
-                //scrolling1.Draw(spriteBatch);
-                //scrolling2.Draw(spriteBatch);
-                //scrolling7.Draw(spriteBatch);
+                map1.DrawBackground(camera, graphics.GraphicsDevice);
 
                 level1.DrawMap(gameTime, camera, graphics.GraphicsDevice);
 

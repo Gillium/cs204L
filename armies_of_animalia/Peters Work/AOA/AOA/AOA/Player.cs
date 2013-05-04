@@ -156,6 +156,10 @@ namespace AOA
                 position.X = 0;
             if (position.Y <= 0)
                 position.Y = 0;
+            if (position.X > (114 * 100))
+                position.X = (114 * 100);
+            if (position.Y > (30 * 100))
+                position.Y = (30 * 100);
 
             CollisionBox = new BoundingBox(new Vector3(position.X - (int)(10 * .68), position.Y, -(int)(60 * .68)),
                 new Vector3(position.X + (int)(30 * .68), position.Y + (int)(140 * .68), (int)(60 * .68)));       

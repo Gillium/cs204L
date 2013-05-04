@@ -21,4 +21,5 @@ Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb
 Content\Objects\porchBlock.xnb
 Content\Objects\windowBlock.xnb
 Content\Objects\StainedGlassWindows01Sample_0.xnb
+Content\Objects\cityBackground.xnb
 Content\level1.txt

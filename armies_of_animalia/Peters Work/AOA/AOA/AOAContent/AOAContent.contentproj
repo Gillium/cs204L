@@ -150,6 +150,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\cityBackground.FBX">
+      <Name>cityBackground</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Objects\StainedGlassWindows01Sample.jpg">
       <Name>StainedGlassWindows01Sample</Name>
       <Importer>TextureImporter</Importer>

@@ -72,7 +72,6 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backgrounds.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="BoundingBoxRenderer.cs" />

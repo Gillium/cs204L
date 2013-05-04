@@ -14,7 +14,7 @@ namespace AOA
     {
         Dictionary<char, GameObject> tileRegions;
 
-        public Texture2D background;
+        public GameObject background;
         ContentManager content;
         string filename;
         char emptyTile, spawnTile;
@@ -30,8 +30,6 @@ namespace AOA
             get;
             private set;
         }
-
-
 
         char[,] tiles; //
         public char[,] Tiles {
@@ -91,8 +89,8 @@ namespace AOA
                 throw new Exception("Can only have one region per key");
         }
 
-        public void AddBackground(string bgAsset) {
-            background = content.Load<Texture2D>(bgAsset);
+        public void AddBackground(GameObject bgAsset) {
+            background = bgAsset;
         }
 
         public bool isEmptyTile(int i, int j)
@@ -148,9 +146,14 @@ namespace AOA
             }
         }
 
-        public void DrawBackground(SpriteBatch spritebatch) {
-            spritebatch.Draw(background, new Rectangle(0, 0, (int)(mapDimensions.X * TileDimensions.X),
-                     (int)(mapDimensions.Y * TileDimensions.Y)), Color.White);
+        public void DrawBackground(Camera camera, GraphicsDevice g)
+        {
+            background.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
+            for (int i = -50; i < 150; i++)
+            {
+                BoundingBox bb = new BoundingBox(new Vector3(i * 100, 0, -5000), new Vector3((i * 100) + 50, 0, 0));
+                BoundingBoxRenderer.Render(bb, g, camera.ViewMatrix, camera.ProjectionMatrix, Color.LightBlue);          
+            }
         }
 
         private void DrawTiles(Camera camera, GraphicsDevice g, Player p)

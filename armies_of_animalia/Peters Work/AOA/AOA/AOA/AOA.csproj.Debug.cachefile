@@ -4,7 +4,6 @@ Content\Objects\rightBlock.xnb
 Content\Objects\rightCornerBlock.xnb
 Content\Objects\plainBlock.xnb
 Content\Objects\enemy.xnb
-Content\Textures\enemy.xnb
 Content\Textures\SpriteSheet.xnb
 Content\Textures\StarsBG.xnb
 Content\Textures\BackCity.xnb
@@ -15,13 +14,12 @@ Content\Textures\QuitButton.xnb
 Content\Textures\StartButton 2.xnb
 Content\Textures\StartButton.xnb
 Content\Textures\TitleBackground.xnb
-Content\Objects\9eca008a4c02753f0b3b8b2de39ab161.xnb
 Content\Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.xnb
 Content\Sounds\05DeathToAllEnemies.xnb
 Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb
 Content\Objects\porchBlock.xnb
 Content\Objects\windowBlock.xnb
-Content\Objects\StainedGlassWindows01Sample.xnb
 Content\Objects\StainedGlassWindows01Sample_0.xnb
+Content\Objects\cityBackground.xnb
 Content\Sounds\05DeathToAllEnemies.wma
 Content\level1.txt
