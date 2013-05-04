@@ -84,19 +84,6 @@
       </Dependency>
     </Item>
     <Item>
-      <Source>Textures\enemy.FBX</Source>
-      <Name>Textures\enemy</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Textures\enemy.xnb</Output>
-      <Time>2013-04-27T21:08:07.8322251-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Textures\enemy_0.xml</Key>
-        <Value>2013-04-27T23:30:44.2196225-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
       <Source>Textures\SpriteSheet.png</Source>
       <Name>Textures\SpriteSheet</Name>
       <Importer>TextureImporter</Importer>
@@ -187,15 +174,6 @@
       <Time>2013-04-16T23:52:51.4166554-04:00</Time>
     </Item>
     <Item>
-      <Source>Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG</Source>
-      <Name>Objects\9eca008a4c02753f0b3b8b2de39ab161</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161.xnb</Output>
-      <Time>2013-04-27T19:59:14.4058067-04:00</Time>
-    </Item>
-    <Item>
       <Source>Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX.wav</Source>
       <Name>Sounds\b381b6_TLOZ_Ocarina_Of_Time_Shield_Out_Sound_FX</Name>
       <Importer>WavImporter</Importer>
@@ -235,7 +213,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Output>
-      <Time>2013-04-27T19:59:14.4058067-04:00</Time>
+      <Time>2013-05-01T20:16:15.7601335-04:00</Time>
     </Item>
     <Item>
       <Source>Objects\leftBlock.FBX</Source>
@@ -273,11 +251,63 @@
       <Time>2013-04-27T21:08:55.3929455-04:00</Time>
     </Item>
     <Item>
-      <Source>Textures\enemy.FBX</Source>
+      <Source>Objects\porchBlock.FBX</Source>
+      <Name>Objects\porchBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\porchBlock.xnb</Output>
+      <Time>2013-04-30T13:27:31.2371107-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\porchBlock_0.xml</Key>
+        <Value>2013-04-30T13:27:39.8256019-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Objects\windowBlock.FBX</Source>
+      <Name>Objects\windowBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\windowBlock.xnb</Output>
+      <Time>2013-04-30T13:27:33.1762216-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\windowBlock_0.xml</Key>
+        <Value>2013-04-30T13:27:39.4035778-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\9eca008a4c02753f0b3b8b2de39ab161_0.xnb</Request>
+      <Request>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\StainedGlassWindows01Sample_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Objects\porchBlock.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Textures\enemy_0.xml</Output>
-      <Time>2013-04-27T21:08:07.8322251-04:00</Time>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\porchBlock_0.xml</Output>
+      <Time>2013-04-30T13:27:31.2371107-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\windowBlock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\obj\x86\Debug\Objects\windowBlock_0.xml</Output>
+      <Time>2013-04-30T13:27:33.1762216-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Objects\StainedGlassWindows01Sample.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOA\bin\x86\Debug\Content\Objects\StainedGlassWindows01Sample_0.xnb</Output>
+      <Time>2013-04-30T13:20:52.1312831-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

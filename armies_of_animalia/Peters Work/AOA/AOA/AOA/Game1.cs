@@ -154,7 +154,7 @@ namespace AOA {
             scrolling9 = new Scrolling(Content.Load<Texture2D>(@"Textures\BackCity"), new Rectangle(4096, height, 2048, 500));
 
             // load block model's
-            windowBlock.Filename = "Objects\\plainBlock";
+            windowBlock.Filename = "Objects\\windowBlock";
             windowBlock.Load(Content);
             topBlock.Filename = "Objects\\plainBlock";
             topBlock.Load(Content);
@@ -166,7 +166,7 @@ namespace AOA {
             leftCornerBlock.Load(Content);
             rightCornerBlock.Filename = "Objects\\rightCornerBlock";
             rightCornerBlock.Load(Content);
-            porchBlock.Filename = "Objects\\plainBlock";
+            porchBlock.Filename = "Objects\\porchBlock";
             porchBlock.Load(Content);
 
             //Load player model

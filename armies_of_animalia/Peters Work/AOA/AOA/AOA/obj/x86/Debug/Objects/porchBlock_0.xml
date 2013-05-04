@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Name>RootNode</Name>
+    <Identity>
+      <SourceFilename>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOAContent\Objects\porchBlock.FBX</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+    <Children>
+      <Child>
+        <Name>Box01</Name>
+        <Transform>2.54 0 0 0 0 7.19523466E-16 -2.54 0 0 2.54 7.19523466E-16 0 -25.30627 -3.94430453E-31 12.1845036 1</Transform>
+      </Child>
+      <Child>
+        <Name>Box02</Name>
+        <Transform>2.54 0 0 0 0 7.19523466E-16 -2.54 0 0 2.54 7.19523466E-16 0 -0.160838053 0 25.26487 1</Transform>
+      </Child>
+      <Child>
+        <Name>Box03</Name>
+        <Transform>2.54 0 0 0 0 7.19523466E-16 -2.54 0 0 2.54 7.19523466E-16 0 -25.30627 -3.94430453E-31 12.1845036 1</Transform>
+      </Child>
+      <Child>
+        <Name>Box04</Name>
+        <Transform>2.54 0 0 0 0 7.19523466E-16 -2.54 0 0 2.54 7.19523466E-16 0 -0.160838053 0 25.26487 1</Transform>
+      </Child>
+      <Child>
+        <Name>Box03</Name>
+        <Transform>2.54 0 0 0 0 7.19523466E-16 -2.54 0 0 2.54 7.19523466E-16 0 -0.184855476 0 25.9721241 1</Transform>
+      </Child>
+      <Child>
+        <Name>Box05</Name>
+        <Transform>2.54 0 0 0 0 7.19523466E-16 -2.54 0 0 2.54 7.19523466E-16 0 0.0785368755 132.497009 25.3182678 1</Transform>
+      </Child>
+      <Child Type="Graphics:MeshContent">
+        <Name>Box06</Name>
+        <Transform>2.54 0 0 0 0 2.54 1.11026928E-07 0 0 -1.11026928E-07 2.54 0 0 76.2 3.33160233E-06 1</Transform>
+        <Positions>-29.9146423 -30.0070553 39.7060432 30.010376 -30.0070553 39.7060432 -29.9146423 -9.815971 39.70604 30.010376 -9.815971 39.7060432 -29.9146423 -30.0070553 -20.2796822 30.010376 -30.0070553 -20.27968 -29.9146385 -9.815971 -20.2796822 30.01038 -9.815971 -20.2796822</Positions>
+        <Geometry>
+          <Batch>
+            <Material>#Resource1</Material>
+            <Indices>2 1 0 1 2 3 6 5 4 5 6 7 10 9 8 9 10 11 14 13 12 13 14 15 18 17 16 17 18 19 22 21 20 21 22 23</Indices>
+            <Vertices>
+              <PositionIndices>2 0 3 1 5 4 7 6 1 0 5 4 3 1 7 5 2 3 6 7 0 2 4 6</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-6.365784E-08 1.88929789E-07 1 -5.048726E-08 1.49840872E-07 1 -1.31705882E-08 3.908892E-08 1 0 0 1 3.182892E-08 -9.44649E-08 -1 6.58529453E-09 -1.9544462E-08 -1 2.524363E-08 -7.492044E-08 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 6.359342E-08 1 -3.9052086E-08 5.044856E-08 1 -1.498777E-07 1.31448594E-08 1 -1.889298E-07 0 0 1 0 0 1 0 0 1 0 0 1 0 -1 0 0 -1 3.905208E-08 -1.31448576E-08 -1 1.498777E-07 -5.044856E-08 -1 1.88929789E-07 -6.359342E-08</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0 0 0 1 1 0 1 1 0 1 1 1 0 0 1 0 1 1 0 1 1 0 0 0 1 1 0 1 1 0 0 0 1 1 0 1 1 0 0 0 1 1 0 1 1 0 0 0</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+    </Children>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Name>Material #1</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Gillium\Documents\GitHub\cs204L\armies_of_animalia\Peters Work\AOA\AOA\AOAContent\Objects\porchBlock.FBX</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.588 0.588 0.588</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="SpecularPower" Type="float">2</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <OpaqueData>
+            <Data Key="TextureCoordinate">TextureCoordinate0</Data>
+          </OpaqueData>
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+  </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\AOAContent\Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG</ExternalReference>
+  </ExternalReferences>
+</XnaContent>

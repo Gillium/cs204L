@@ -23,7 +23,7 @@ namespace AOA
         int tileWidth, tileHeight;
         float depthX, depthY;
 
-        const float gravity = 200f;
+        float gravity = 200f;
         const float speed = 600f;
         const float maxSpeed = 800f;
 
@@ -37,6 +37,12 @@ namespace AOA
 
         GameObject obj;
         BoundingBox mergedBox;
+
+        public float Gravity
+        {
+            get { return gravity; }
+            set { gravity = value; }
+        }
 
         public List<Point> CollisionPoints
         {
@@ -106,33 +112,40 @@ namespace AOA
             return new Point((int)(position.X / (int)(50 * .68)), (int)(position.Y / (int)(50 * .68)));
         }
 
-        public void Update(GameTime gameTime, bool collision)
+        public void Update(GameTime gameTime, bool collision, Map map)
         {
+            int i = (int)((PlayerPostion().X + 50) / 100);
+            int j = (int)((PlayerPostion().Y + 0) / 100);
             Collision = collision;
             previousPosition = position;
             //previousInput = currentInput;
             currentInput = Keyboard.GetState();
 
-            acceleration.Y = -gravity;
+            if (!Collision)
+              acceleration.Y = -gravity;
 
             velocity -= movement;
             movement = Vector2.Zero;
 
             if (currentInput.IsKeyDown(Keys.Left))
+            {
                 movement.X -= speed;
+                if ((j > 0) && map.isEmptyTile(i, j - 1))
+                    gravity = 200f;
+            }
             if (currentInput.IsKeyDown(Keys.Right))
             {
                 movement.X += speed;
-                ++currentFrame.X;
-                if (currentFrame.X >= 5)
-                    currentFrame.X = 0;
+                if ((j > 0) && map.isEmptyTile(i, j - 1))
+                    gravity = 200f;
             }
             if (currentInput.IsKeyDown(Keys.Up))
             {
                 movement.Y += speed * 1.5f;
+                gravity = 200f;
             }
-            if (currentInput.IsKeyDown(Keys.Down))
-                movement.Y -= speed;
+            //if (currentInput.IsKeyDown(Keys.Down))
+                //movement.Y -= speed;
 
             float deltatime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -148,43 +161,155 @@ namespace AOA
                 new Vector3(position.X + (int)(30 * .68), position.Y + (int)(140 * .68), (int)(60 * .68)));       
         }
 
-        public void HandleTileCollision(Vector2 mapDimensions)
+        public void HandleTileCollision(Map map, bool collision, GameTime gameTime)
         {
-            Vector3[] corners = CollisionBox.GetCorners();
-            if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
-                position = previousPosition;
-            else if (((corners[0].X + 50) / 100) < 1)
-                position = previousPosition;
-            else
+            //Vector3[] corners = CollisionBox.GetCorners();
+            //if (((corners[1].X + 50) / 100) > map.mapDimensions.X - 1)
+            //    position = previousPosition;
+            //else if (((corners[0].X + 50) / 100) < 1)
+            //    position = previousPosition;
+
+            if (true)
             {
                 depthX = depthY = float.MaxValue;
-                Vector3[] v = MergedBox.GetCorners();
+                int i = (int)((PlayerPostion().X + 50) / 100);
+                int j = (int)((PlayerPostion().Y + 0) / 100);
+                Vector3 pos = new Vector3(map.TileDimensions.X * i, map.TileDimensions.Y * j, 0);
+                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
+                float deltaX, deltaY;
+                //deltaX = CollisionBox.GetCorners()[0].X - bb.GetCorners()[0].X;
+                //deltaY = CollisionBox.GetCorners()[0].Y - bb.GetCorners()[0].Y;
+               
 
-                if (velocity.X < 0)
+                if (velocity.Y > 0)
                 {
-                    depthX = 0;
+                    deltaY = -CollisionBox.GetCorners()[0].Y + bb.GetCorners()[3].Y;
                 }
-                else if (velocity.X > 0)
+                else if (velocity.Y < 0)
                 {
-                    depthX = 0;
+                    deltaY = CollisionBox.GetCorners()[0].Y - bb.GetCorners()[0].Y;
+                    deltaY -= 50;
+                    gravity = 0f;
                 }
-                if (velocity.Y < 0)
-                {
-                    depthY = 0;
-                }
-                else if (velocity.Y > 0)
-                {
-                    depthY = 0;
-                }
+                else
+                    deltaY = 0;
 
-                if (Math.Abs(depthY) <= Math.Abs(depthX))
+                if (velocity.X > 0)
                 {
-                    position = previousPosition + new Vector2(0, depthY);
+                    deltaX = CollisionBox.GetCorners()[1].X - bb.GetCorners()[0].X;
+                    deltaY = 0;
                 }
-                else if (Math.Abs(depthY) > Math.Abs(depthX))
+                else if (velocity.X < 0)
                 {
-                    position = previousPosition + new Vector2(depthX, 0);
+                    deltaX = CollisionBox.GetCorners()[0].X - bb.GetCorners()[1].X;
+                    deltaY = 0;
                 }
+                else
+                    deltaX = 0;
+
+                position.X -= deltaX;
+                position.Y += deltaY;
+
+
+
+
+
+
+
+
+                //Vector3[] v = MergedBox.GetCorners();
+
+                // Position not velocity
+                // checkcollision which corners entered
+                
+                //if (velocity.X < 0)
+                //{
+                //    velocity.X = 0;
+                //    if (velocity.Y < 0)
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += 10;
+                //            //position.Y += 10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //    else if (velocity.Y > 0)
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += 10;
+                //            //position.Y += -10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //    else
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += 10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //}
+                //else if (velocity.X > 0)
+                //{
+                //    velocity.X = 0;
+                //    if (velocity.Y < 0)
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += -10;
+                //            position.Y += 10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //    else if (velocity.Y > 0)
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += -10;
+                //            //position.Y += -10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //    else
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += -10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    if (velocity.Y < 0)
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.Y += 10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //    else if (velocity.Y > 0)
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.Y += -10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //    else
+                //    {
+                //        while (map.CheckCollision(this))
+                //        {
+                //            position.X += 10;
+                //            //position.Y += 10;
+                //            Update(gameTime, collision);
+                //        }
+                //    }
+                //}
             }
         }
 
@@ -193,12 +318,12 @@ namespace AOA
             obj.Position = new Vector3(position.X,position.Y, 0);
             obj.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
 
-            BoundingBoxRenderer.Render(
-            CollisionBox,
-            g,
-            camera.ViewMatrix,
-            camera.ProjectionMatrix,
-            Collision ? Color.Red : Color.Green);
+            //BoundingBoxRenderer.Render(
+            //CollisionBox,
+            //g,
+            //camera.ViewMatrix,
+            //camera.ProjectionMatrix,
+            //Collision ? Color.Red : Color.Green);
         }
     }
 }

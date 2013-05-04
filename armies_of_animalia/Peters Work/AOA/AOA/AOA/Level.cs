@@ -27,13 +27,12 @@ namespace AOA
         {
             bool collision = false;
 
-            BoundingBox bb = new BoundingBox();
             if (activateMap.CheckCollision(Player))
             {
-                Player.HandleTileCollision(activateMap.mapDimensions);
+                Player.HandleTileCollision(activateMap, true, gameTime);
                 collision = true;
             }
-            Player.Update(gameTime, collision);
+            Player.Update(gameTime, collision, activateMap);
             Game1.collision = collision;
         }
 

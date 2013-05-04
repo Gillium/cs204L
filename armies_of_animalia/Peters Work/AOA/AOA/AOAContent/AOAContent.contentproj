@@ -64,8 +64,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Textures\enemy.FBX">
-      <Name>enemy</Name>
+    <Compile Include="Objects\windowBlock.FBX">
+      <Name>windowBlock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Objects\porchBlock.FBX">
+      <Name>porchBlock</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -144,13 +149,19 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG">
+    <None Include="Objects\StainedGlassWindows01Sample.jpg">
+      <Name>StainedGlassWindows01Sample</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Objects\9eca008a4c02753f0b3b8b2de39ab161.JPG">
       <Name>9eca008a4c02753f0b3b8b2de39ab161</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

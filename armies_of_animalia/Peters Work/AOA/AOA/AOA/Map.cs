@@ -95,12 +95,17 @@ namespace AOA
             background = content.Load<Texture2D>(bgAsset);
         }
 
+        public bool isEmptyTile(int i, int j)
+        {
+          return (tiles[i, j].Equals('*'));
+        }
+
         public bool CheckCollision(Point movingTileLocation) {
             if (movingTileLocation.X > mapDimensions.X - 1)
                 return true;
             int mapHeight = (int)mapDimensions.Y - 1;
             if (movingTileLocation.X < mapDimensions.X && movingTileLocation.Y < mapDimensions.Y &&
-                !tiles[movingTileLocation.X, mapHeight - movingTileLocation.Y].Equals('*'))
+                !isEmptyTile(movingTileLocation.X, mapHeight - movingTileLocation.Y))
                 return true; // do bounding box intersection here
 
             return false;
@@ -109,18 +114,25 @@ namespace AOA
         public bool CheckCollision(Player p)
         {
             int i = (int)((p.PlayerPostion().X + 50) / 100);
-            int j = (int)((p.PlayerPostion().Y + 50) / 100);
-            Vector3[] corners = p.CollisionBox.GetCorners();
-            if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
-                return true;
-            if (((corners[0].X + 50) / 100) < 1)
-                return true;
+            int j = (int)((p.PlayerPostion().Y + 20) / 100);
+            //Vector3[] corners = p.CollisionBox.GetCorners();
+            //if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
+            //    return true;
+            //if (((corners[0].X + 50) / 100) < 1)
+            //    return true;
+            if (i < 1)
+                i = 0;
+            if (j < 1)
+                j = 0;
             if ((i < mapDimensions.X) && (j < mapDimensions.Y) && !tiles[i, j].Equals('*'))
-            {
+            {  
                 Vector3 pos = new Vector3(TileDimensions.X * i, TileDimensions.Y * j, 0);
-                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(60 * .68), pos.Y, -(int)(60 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
-                p.MergedBox = BoundingBox.CreateMerged(bb, p.CollisionBox);
-                return p.CollisionBox.Intersects(bb);
+                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
+                bool hits = p.CollisionBox.Intersects(bb);
+                if (hits)
+                    return true;
+                else
+                    return false;
             }
             return false;
         }
@@ -153,9 +165,9 @@ namespace AOA
                         GameObject tile = tileRegions[tiles[i, j]];
                         tile.Position = new Vector3(TileDimensions.X * i, TileDimensions.Y * j, 0);
                         ////tron mode
-                        //tile.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
-                        BoundingBox bb = new BoundingBox(new Vector3(tile.Position.X - (int)(60 * .68), tile.Position.Y, -(int)(60 * .68)), new Vector3(tile.Position.X + (int)(80 * .68), tile.Position.Y + (int)(140 * .68), (int)(60 * .68)));
-                        BoundingBoxRenderer.Render(bb, g, camera.ViewMatrix, camera.ProjectionMatrix,  p.CollisionBox.Intersects(bb) ? Color.Red : Color.Green);
+                        tile.Draw(camera.ViewMatrix, camera.ProjectionMatrix, g);
+                        //BoundingBox bb = new BoundingBox(new Vector3(tile.Position.X - (int)(60 * .68), tile.Position.Y, -(int)(60 * .68)), new Vector3(tile.Position.X + (int)(80 * .68), tile.Position.Y + (int)(140 * .68), (int)(60 * .68)));
+                        //BoundingBoxRenderer.Render(bb, g, camera.ViewMatrix, camera.ProjectionMatrix,  p.CollisionBox.Intersects(bb) ? Color.Red : Color.Green);
                     }
                 }
             }
