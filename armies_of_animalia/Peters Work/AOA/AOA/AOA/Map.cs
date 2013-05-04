@@ -98,6 +98,11 @@ namespace AOA
           return (tiles[i, j].Equals('*'));
         }
 
+        public bool IsPorch(int i, int j)
+        {
+            return tiles[i, j].Equals('R');
+        }
+
         public bool CheckCollision(Player p)
         {
             int i = (int)((p.PlayerPostion().X + 50) / 100);
@@ -107,9 +112,9 @@ namespace AOA
             if (j < 1)
                 j = 0;
             if ((i < mapDimensions.X) && (j < mapDimensions.Y) && !tiles[i, j].Equals('*'))
-            {  
+            {
                 Vector3 pos = new Vector3(TileDimensions.X * i, TileDimensions.Y * j, 0);
-                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
+                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)((IsPorch(i, j) ? 10 : 140) * .68), (int)(60 * .68)));
                 bool hits = p.CollisionBox.Intersects(bb);
                 if (hits)
                     return true;

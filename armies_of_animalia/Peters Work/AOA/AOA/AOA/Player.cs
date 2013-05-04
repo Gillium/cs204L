@@ -171,7 +171,7 @@ namespace AOA
                 int i = (int)((PlayerPostion().X + 50) / 100);
                 int j = (int)((PlayerPostion().Y + 0) / 100);
                 Vector3 pos = new Vector3(map.TileDimensions.X * i, map.TileDimensions.Y * j, 0);
-                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
+                BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(map.IsPorch(i, j) ? 10 : 140 * .68), (int)(60 * .68)));
                 float deltaX, deltaY;               
 
                 if (velocity.Y > 0)
