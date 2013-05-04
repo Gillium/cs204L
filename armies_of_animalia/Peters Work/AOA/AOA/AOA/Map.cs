@@ -98,26 +98,10 @@ namespace AOA
           return (tiles[i, j].Equals('*'));
         }
 
-        public bool CheckCollision(Point movingTileLocation) {
-            if (movingTileLocation.X > mapDimensions.X - 1)
-                return true;
-            int mapHeight = (int)mapDimensions.Y - 1;
-            if (movingTileLocation.X < mapDimensions.X && movingTileLocation.Y < mapDimensions.Y &&
-                !isEmptyTile(movingTileLocation.X, mapHeight - movingTileLocation.Y))
-                return true; // do bounding box intersection here
-
-            return false;
-        }
-
         public bool CheckCollision(Player p)
         {
             int i = (int)((p.PlayerPostion().X + 50) / 100);
             int j = (int)((p.PlayerPostion().Y + 20) / 100);
-            //Vector3[] corners = p.CollisionBox.GetCorners();
-            //if (((corners[1].X + 50) / 100) > mapDimensions.X - 1)
-            //    return true;
-            //if (((corners[0].X + 50) / 100) < 1)
-            //    return true;
             if (i < 1)
                 i = 0;
             if (j < 1)

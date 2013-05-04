@@ -17,9 +17,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AOA
 {
-    /// <summary>
-    /// Helper class for drawing a tank model with animated wheels and turret.
-    /// </summary>
     public class GameObject
     {
         #region Fields
@@ -102,10 +99,8 @@ namespace AOA
         /// </summary>
         public void Load(ContentManager content)
         {
-            // Load the tank model from the ContentManager.
             theShape = content.Load<Model>(filename);
             boneTransforms = new Matrix[theShape.Bones.Count];
-          //  wingAngle = 0;
         }
 
         public void initializeMovement(Vector3 pos, Vector3 vel)
@@ -129,21 +124,6 @@ namespace AOA
                 velocity.Z *= -1;
         }
 
-        //public bool CollidesWith(Model otherModel, Matrix otherWorld)
-        //{
-        //    // Loop through each ModelMesh in both objects and compare all bounding
-        //    // spheres for collisions
-        //    foreach (ModelMesh myModelMeshes in otherModel.Meshes)
-        //    {
-        //        foreach (ModelMesh hisModelMeshes in otherModel.Meshes)
-        //        {
-        //            if (myModelMeshes.BoundingSphere.Transform(GetWorld()).Intersects(hisModelMeshes.BoundingSphere.Transform(otherWorld)))
-        //                return true;
-        //        }
-        //    }
-        //    return false;
-        //}  
-
         public void Draw(Matrix view, Matrix projection, GraphicsDevice g)
         {
             // Set the world matrix as the root transform of the model.
@@ -153,15 +133,12 @@ namespace AOA
             float headingAngle = (float)Math.Atan2(velocity.Y, velocity.X);
             Matrix pitchRotation = Matrix.CreateRotationX(0);
             Matrix yawRotation = Matrix.CreateRotationZ((float)(headingAngle + Math.PI / 2.0));
-            Matrix rollRotation = Matrix.CreateRotationY((float)(headingAngle + Math.PI / 2.0));//
-//            Matrix rollRotation = Matrix.CreateRotationY((float)Math.PI);//
+            Matrix rollRotation = Matrix.CreateRotationY((float)(headingAngle + Math.PI / 2.0));
             Matrix translation = Matrix.CreateTranslation(position + 1.5f * Vector3.UnitZ);
 
-            RootTransform = scale *             //1
-                            rollRotation *      //2
-                            //yawRotation *       //3
-                            //pitchRotation *     //4
-                            translation;        //5
+            RootTransform = scale *             
+                            rollRotation *      
+                            translation;        
 
             // Look up combined bone matrices for the entire model.
             theShape.CopyAbsoluteBoneTransformsTo(boneTransforms);
@@ -171,20 +148,7 @@ namespace AOA
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    //if (mesh.Name == "leftWing")
-                    //    effect.World = Matrix.CreateTranslation(2, 0, 0) *
-                    //                   Matrix.CreateRotationY(wingAngle) *
-                    //                   Matrix.CreateTranslation(-2, 0, 0) *
-                    //                   boneTransforms[mesh.ParentBone.Index];
-
-                    //else if (mesh.Name == "rightWing")
-                    //    effect.World = Matrix.CreateTranslation(-2, 0, 0) *
-                    //                   Matrix.CreateRotationY(-wingAngle) *
-                    //                   Matrix.CreateTranslation(2, 0, 0) *
-                    //                   boneTransforms[mesh.ParentBone.Index];
-                    //else
-                        effect.World = boneTransforms[mesh.ParentBone.Index];
-
+                    effect.World = boneTransforms[mesh.ParentBone.Index];
                     effect.View = view;
                     effect.Projection = projection;
                     effect.EnableDefaultLighting();

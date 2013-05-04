@@ -27,8 +27,8 @@ namespace AOA
             nearDistance = 2.0f;
             farDistance = 10000.0f;
             view = newView;
-            position = new Vector3(25, 25, 1000); //view.X, view.Y, view.MinDepth);
-            viewAt = new Vector3(25, 25, 0); //view.X, view.Y, 20.0f);
+            position = new Vector3(25, 25, 1000); //view.X, view.Y, view.MinDepth;
+            viewAt = new Vector3(25, 25, 0); //view.X, view.Y, 20.0f;
             worldUp = new Vector3(0.0f, 1.0f, 0.0f);
             UpdateView();
             UpdateProjection();

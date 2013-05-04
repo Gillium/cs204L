@@ -167,23 +167,12 @@ namespace AOA
 
         public void HandleTileCollision(Map map, bool collision, GameTime gameTime)
         {
-            //Vector3[] corners = CollisionBox.GetCorners();
-            //if (((corners[1].X + 50) / 100) > map.mapDimensions.X - 1)
-            //    position = previousPosition;
-            //else if (((corners[0].X + 50) / 100) < 1)
-            //    position = previousPosition;
-
-            if (true)
-            {
                 depthX = depthY = float.MaxValue;
                 int i = (int)((PlayerPostion().X + 50) / 100);
                 int j = (int)((PlayerPostion().Y + 0) / 100);
                 Vector3 pos = new Vector3(map.TileDimensions.X * i, map.TileDimensions.Y * j, 0);
                 BoundingBox bb = new BoundingBox(new Vector3(pos.X - (int)(80 * .68), pos.Y, -(int)(80 * .68)), new Vector3(pos.X + (int)(80 * .68), pos.Y + (int)(140 * .68), (int)(60 * .68)));
-                float deltaX, deltaY;
-                //deltaX = CollisionBox.GetCorners()[0].X - bb.GetCorners()[0].X;
-                //deltaY = CollisionBox.GetCorners()[0].Y - bb.GetCorners()[0].Y;
-               
+                float deltaX, deltaY;               
 
                 if (velocity.Y > 0)
                 {
@@ -213,108 +202,6 @@ namespace AOA
 
                 position.X -= deltaX;
                 position.Y += deltaY;
-
-
-
-
-
-
-
-
-                //Vector3[] v = MergedBox.GetCorners();
-
-                // Position not velocity
-                // checkcollision which corners entered
-                
-                //if (velocity.X < 0)
-                //{
-                //    velocity.X = 0;
-                //    if (velocity.Y < 0)
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += 10;
-                //            //position.Y += 10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //    else if (velocity.Y > 0)
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += 10;
-                //            //position.Y += -10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //    else
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += 10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //}
-                //else if (velocity.X > 0)
-                //{
-                //    velocity.X = 0;
-                //    if (velocity.Y < 0)
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += -10;
-                //            position.Y += 10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //    else if (velocity.Y > 0)
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += -10;
-                //            //position.Y += -10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //    else
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += -10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //}
-                //else
-                //{
-                //    if (velocity.Y < 0)
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.Y += 10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //    else if (velocity.Y > 0)
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.Y += -10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //    else
-                //    {
-                //        while (map.CheckCollision(this))
-                //        {
-                //            position.X += 10;
-                //            //position.Y += 10;
-                //            Update(gameTime, collision);
-                //        }
-                //    }
-                //}
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Camera camera, GraphicsDevice g)
